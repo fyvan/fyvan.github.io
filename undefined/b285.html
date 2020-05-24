@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="hello hexo, Yvan Blog">
+    <meta name="keywords" content="Docker 安装 MongoDB, Yvan Blog">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>hello hexo | Yvan Blog</title>
+    <title>Docker 安装 MongoDB | Yvan Blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -268,12 +268,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/6.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/14.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">hello hexo</h1>
+                    <h1 class="description center-align post-title">Docker 安装 MongoDB</h1>
                 </div>
             </div>
         </div>
@@ -388,12 +388,25 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/Ubantu-MongoDB/">
+                                <span class="chip bg-color">Ubantu,MongoDB</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/Software-Install/" class="post-category">
+                                Software_Install
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -418,15 +431,107 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class=" language-bash"><code class="language-bash">$ hexo new <span class="token string">"My New Post"</span></code></pre>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre class=" language-bash"><code class="language-bash">$ hexo server</code></pre>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre class=" language-bash"><code class="language-bash">$ hexo generate</code></pre>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre class=" language-bash"><code class="language-bash">$ hexo deploy</code></pre>
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+                <h3 id="1-搜索镜像"><a href="#1-搜索镜像" class="headerlink" title="1. 搜索镜像"></a>1. 搜索镜像</h3><p>查找Docker Hub上的mongo镜像。 </p>
+<pre class=" language-bash"><code class="language-bash">root@Aspire:~<span class="token comment" spellcheck="true"># docker search mongo</span>
+NAME           DESCRIPTION                                    STARS OFFICIAL AUTOMATED
+mongo          MongoDB document databases provide high avai…  6877   <span class="token punctuation">[</span>OK<span class="token punctuation">]</span>
+mongo-express  Web-based MongoDB admin interface, written w…  692    <span class="token punctuation">[</span>OK<span class="token punctuation">]</span>
+tutum/mongodb  MongoDB Docker image – listens <span class="token keyword">in</span> port 27017…  230             <span class="token punctuation">[</span>OK<span class="token punctuation">]</span></code></pre>
+<h3 id="2-拉取MongoDB镜像"><a href="#2-拉取MongoDB镜像" class="headerlink" title="2. 拉取MongoDB镜像"></a>2. 拉取MongoDB镜像</h3><p>拉取Docker Hub上的mongo镜像。</p>
+<pre class=" language-bash"><code class="language-bash">root@Aspire:~<span class="token comment" spellcheck="true"># docker pull mongo</span>
+Using default tag: latest
+latest: Pulling from library/mongo
+23884877105a: Downloading <span class="token punctuation">[</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">></span>                 <span class="token punctuation">]</span>  6.626MB/26.69MB
+bc38caa0f5b9: Download complete
+2910811b6c42: Download complete
+36505266dcc6: Download complete
+a4d269900d94: Download complete
+5e2526abb80a: Download complete
+d3eece1f39ec: Download complete
+358ed78d3204: Download complete
+1a878b8604ae: Download complete
+dde03a2883d0: Download complete
+4ffe534daa34: Downloading <span class="token punctuation">[</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">=</span><span class="token operator">></span>                      <span class="token punctuation">]</span>  19.36MB/129.1MB
+f164ba21e17c: Download complete
+6494c387442c: Download complete</code></pre>
+<h3 id="3-查看本地镜像列表"><a href="#3-查看本地镜像列表" class="headerlink" title="3. 查看本地镜像列表"></a>3. 查看本地镜像列表</h3><p>查看MongoDB镜像是否拉取成功。</p>
+<pre class=" language-bash"><code class="language-bash">root@Aspire:~<span class="token comment" spellcheck="true"># docker images | grep mongo</span>
+mongo       latest      3f3daf863757     4 weeks ago    388MB</code></pre>
+<h3 id="4-创建存储目录"><a href="#4-创建存储目录" class="headerlink" title="4. 创建存储目录"></a>4. 创建存储目录</h3><p>创建MongoDB持久化文件目录。</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">mkdir</span> -p /home/data/mongo/data</code></pre>
+<h3 id="5-启动容器"><a href="#5-启动容器" class="headerlink" title="5.  启动容器"></a>5.  启动容器</h3><p>options说明:</p>
+<ul>
+<li>–restart=always: 重启策略</li>
+<li>-d: 后台运行容器，并返回容器ID</li>
+<li>-p: 端口映射，格式为：<strong>主机(宿主)端口:容器端口</strong></li>
+<li>–name: 为容器指定一个名称</li>
+<li>-v: 给容器挂载存储卷，挂载到容器的某个目录</li>
+</ul>
+<pre class=" language-bash"><code class="language-bash">root@Aspire:~<span class="token comment" spellcheck="true"># docker run --restart=always -p 27017:27017 --name mongo -v /home/data/mongo/data:/data/db -d mongo --auth</span>
+<span class="token comment" spellcheck="true">#启动后的信息</span>
+96e65e736ef5fa393b0b04bad17f955cb94bc6b1b378b534166ccba87e003366</code></pre>
+<h3 id="6-查看容器信息"><a href="#6-查看容器信息" class="headerlink" title="6. 查看容器信息"></a>6. 查看容器信息</h3><p>查看容器ID信息</p>
+<pre class=" language-bash"><code class="language-bash">root@Aspire:~<span class="token comment" spellcheck="true"># docker ps</span>
+CONTAINER ID  IMAGE  COMMAND                 CREATED        STATUS        PORTS                     NAMES
+96e65e736ef5  mongo  <span class="token string">"docker-entrypoint.s…"</span>  4 minutes ago  Up 4 minutes  0.0.0.0:27017-<span class="token operator">></span>27017/tcp  mongo</code></pre>
+<h3 id="7-配置MongoDB权限"><a href="#7-配置MongoDB权限" class="headerlink" title="7. 配置MongoDB权限"></a>7. 配置MongoDB权限</h3><p>以admin用户身份进入mongo<br>         命令: docker exec -it <strong>容器ID</strong> mongo admin</p>
+<pre class=" language-bash"><code class="language-bash">root@Aspire:~<span class="token comment" spellcheck="true"># docker exec -it 96e65e736ef5 mongo admin</span>
+<span class="token operator">></span> db.createUser<span class="token punctuation">(</span><span class="token punctuation">{</span>user: <span class="token string">'admin'</span>, pwd: <span class="token string">'admin'</span>, roles: <span class="token punctuation">[</span><span class="token punctuation">{</span>role: <span class="token string">"root"</span>, db: <span class="token string">"admin"</span><span class="token punctuation">}</span><span class="token punctuation">]</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+Successfully added user: <span class="token punctuation">{</span>
+        <span class="token string">"user"</span> <span class="token keyword">:</span> <span class="token string">"admin"</span>,
+        <span class="token string">"roles"</span> <span class="token keyword">:</span> <span class="token punctuation">[</span>
+                <span class="token punctuation">{</span>
+                        <span class="token string">"role"</span> <span class="token keyword">:</span> <span class="token string">"root"</span>,
+                        <span class="token string">"db"</span> <span class="token keyword">:</span> <span class="token string">"admin"</span>
+                <span class="token punctuation">}</span>
+        <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+<span class="token operator">></span> <span class="token keyword">exit</span><span class="token punctuation">;</span>MongoDB shell version v4.2.6
+connecting to: mongodb://127.0.0.1:27017/admin?compressors<span class="token operator">=</span>disabled<span class="token operator">&amp;</span>gssapiServiceName<span class="token operator">=</span>mongodb
+Implicit session: session <span class="token punctuation">{</span> <span class="token string">"id"</span> <span class="token keyword">:</span> UUID<span class="token punctuation">(</span><span class="token string">"ed34651c-15c1-4b1a-8074-c44976f7b48f"</span><span class="token punctuation">)</span> <span class="token punctuation">}</span>
+MongoDB server version: 4.2.6
+Welcome to the MongoDB shell.
+For interactive help, <span class="token function">type</span> <span class="token string">"help"</span><span class="token keyword">.</span>
+For <span class="token function">more</span> comprehensive documentation, see
+        http://docs.mongodb.org/
+Questions? Try the support group
+        http://groups.google.com/group/mongodb-user
+<span class="token operator">></span> <span class="token operator">></span> db.createUser<span class="token punctuation">(</span><span class="token punctuation">{</span>user: <span class="token string">'admin'</span>, pwd: <span class="token string">'admin'</span>, roles: <span class="token punctuation">[</span><span class="token punctuation">{</span>role: <span class="token string">"root"</span>, db: <span class="token string">"admin"</span><span class="token punctuation">}</span><span class="token punctuation">]</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+2020-05-24T15:43:19.449+0000 E  QUERY    <span class="token punctuation">[</span>js<span class="token punctuation">]</span> uncaught exception: SyntaxError: expected expression, got <span class="token string">'>'</span> <span class="token keyword">:</span>
+@<span class="token punctuation">(</span>shell<span class="token punctuation">)</span>:1:0
+<span class="token operator">></span> Successfully added user: <span class="token punctuation">{</span>
+<span class="token punctuation">..</span>. <span class="token string">"user"</span> <span class="token keyword">:</span> <span class="token string">"admin"</span>,
+<span class="token punctuation">..</span>. <span class="token string">"roles"</span> <span class="token keyword">:</span> <span class="token punctuation">[</span>
+<span class="token punctuation">..</span>. <span class="token punctuation">{</span>
+<span class="token punctuation">..</span>. <span class="token string">"role"</span> <span class="token keyword">:</span> <span class="token string">"root"</span>,
+<span class="token punctuation">..</span>. <span class="token string">"db"</span> <span class="token keyword">:</span> <span class="token string">"admin"</span>
+<span class="token punctuation">..</span>. <span class="token punctuation">}</span>
+<span class="token punctuation">..</span>. <span class="token punctuation">]</span>
+<span class="token punctuation">..</span>. <span class="token punctuation">}</span>
+2020-05-24T15:43:19.452+0000 E  QUERY    <span class="token punctuation">[</span>js<span class="token punctuation">]</span> uncaught exception: SyntaxError: unexpected token: identifier <span class="token keyword">:</span>
+@<span class="token punctuation">(</span>shell<span class="token punctuation">)</span>:1:13
+<span class="token operator">></span> <span class="token operator">></span> <span class="token keyword">exit</span><span class="token punctuation">;</span>
+2020-05-24T15:43:27.456+0000 E  QUERY    <span class="token punctuation">[</span>js<span class="token punctuation">]</span> uncaught exception: SyntaxError: expected expression, got <span class="token string">'>'</span> <span class="token keyword">:</span>
+@<span class="token punctuation">(</span>shell<span class="token punctuation">)</span>:1:0
+<span class="token operator">></span></code></pre>
+<h3 id="8-测试"><a href="#8-测试" class="headerlink" title="8. 测试"></a>8. 测试</h3><p>测试否OK, MongoDB身份认证</p>
+<pre class=" language-bash"><code class="language-bash">root@Aspire:~<span class="token comment" spellcheck="true"># docker exec -it 96e65e736ef5 mongo admin</span>
+<span class="token operator">></span> db.auth<span class="token punctuation">(</span><span class="token string">"admin"</span>, <span class="token string">"admin"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+1
+<span class="token operator">></span> <span class="token keyword">exit</span><span class="token punctuation">;</span>MongoDB shell version v4.2.6
+connecting to: mongodb://127.0.0.1:27017/admin?compressors<span class="token operator">=</span>disabled<span class="token operator">&amp;</span>gssapiServiceName<span class="token operator">=</span>mongodb
+Implicit session: session <span class="token punctuation">{</span> <span class="token string">"id"</span> <span class="token keyword">:</span> UUID<span class="token punctuation">(</span><span class="token string">"d2573daf-38b0-430e-aed3-e36187e8c800"</span><span class="token punctuation">)</span> <span class="token punctuation">}</span>
+MongoDB server version: 4.2.6
+<span class="token operator">></span> <span class="token operator">></span> db.auth<span class="token punctuation">(</span><span class="token string">"admin"</span>, <span class="token string">"admin"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+2020-05-24T15:45:54.154+0000 E  QUERY    <span class="token punctuation">[</span>js<span class="token punctuation">]</span> uncaught exception: SyntaxError: expected expression, got <span class="token string">'>'</span> <span class="token keyword">:</span>
+@<span class="token punctuation">(</span>shell<span class="token punctuation">)</span>:1:0
+<span class="token operator">></span> 1
+1
+<span class="token operator">></span> <span class="token operator">></span> <span class="token keyword">exit</span><span class="token punctuation">;</span>
+2020-05-24T15:45:58.341+0000 E  QUERY    <span class="token punctuation">[</span>js<span class="token punctuation">]</span> uncaught exception: SyntaxError: expected expression, got <span class="token string">'>'</span> <span class="token keyword">:</span>
+@<span class="token punctuation">(</span>shell<span class="token punctuation">)</span>:1:0
+<span class="token operator">></span>
+<span class="token operator">></span></code></pre>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -460,7 +565,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="/about" rel="external nofollow noreferrer">Yvan Yang</a>
+                    <a href="/about" rel="external nofollow noreferrer">fyang</a>
                 </span>
             </div>
             <div class="reprint__type">
@@ -470,7 +575,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://fyvan.github.io/undefined/b659.html">http://fyvan.github.io/undefined/b659.html</a>
+                    <a href="http://fyvan.github.io/undefined/b285.html">http://fyvan.github.io/undefined/b285.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -483,7 +588,7 @@
                     本博客所有文章除特別声明外，均采用
                     <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
                     许可协议。转载请注明来源
-                    <a href="/about" target="_blank">Yvan Yang</a>
+                    <a href="/about" target="_blank">fyang</a>
                     !
                 </span>
             </div>
@@ -507,7 +612,11 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/Ubantu-MongoDB/">
+                                    <span class="chip bg-color">Ubantu,MongoDB</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -936,9 +1045,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/undefined/b285.html">
                     <div class="card-image">
@@ -956,9 +1066,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-05-24
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-24
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -971,6 +1081,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -986,7 +1097,7 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
                 <a href="/undefined/b659.html">
@@ -1016,7 +1127,6 @@
                         </span>
                     </div>
                 </div>
-
                 
             </div>
         </div>

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://fyvan.github.io/"/>
-  <updated>2020-05-24T07:50:33.460Z</updated>
+  <updated>2020-05-24T15:47:12.320Z</updated>
   <id>http://fyvan.github.io/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Docker 安装 MongoDB</title>
+    <link href="http://fyvan.github.io/undefined/b285.html"/>
+    <id>http://fyvan.github.io/undefined/b285.html</id>
+    <published>2020-05-24T13:28:05.303Z</published>
+    <updated>2020-05-24T15:47:12.320Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;1-搜索镜像&quot;&gt;&lt;a href=&quot;#1-搜索镜像&quot; class=&quot;headerlink&quot; title=&quot;1. 搜索镜像&quot;&gt;&lt;/a&gt;1. 搜索镜像&lt;/h3&gt;&lt;p&gt;查找Docker Hub上的mongo镜像。 &lt;/p&gt;
+&lt;pre class=&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Software_Install" scheme="http://fyvan.github.io/categories/Software-Install/"/>
+    
+    
+      <category term="Ubantu,MongoDB" scheme="http://fyvan.github.io/tags/Ubantu-MongoDB/"/>
+    
+  </entry>
   
   <entry>
     <title>hello hexo</title>
