@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://fyvan.github.io/"/>
-  <updated>2020-05-26T10:05:54.471Z</updated>
+  <updated>2020-05-28T16:35:51.553Z</updated>
   <id>http://fyvan.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://fyvan.github.io/undefined/981a.html"/>
     <id>http://fyvan.github.io/undefined/981a.html</id>
     <published>2020-05-26T08:09:00.910Z</published>
-    <updated>2020-05-26T10:05:54.471Z</updated>
+    <updated>2020-05-28T16:35:51.553Z</updated>
     
     <summary type="html">
     
@@ -40,6 +40,33 @@
     
     
       <category term="CentOS7, mariadb" scheme="http://fyvan.github.io/tags/CentOS7-mariadb/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CentOS7安装Nginx</title>
+    <link href="http://fyvan.github.io/undefined/981a.html"/>
+    <id>http://fyvan.github.io/undefined/981a.html</id>
+    <published>2020-05-26T08:04:06.090Z</published>
+    <updated>2020-05-27T07:12:19.498Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;1-下载Linux版的Ngnix&quot;&gt;&lt;a href=&quot;#1-下载Linux版的Ngnix&quot; class=&quot;headerlink&quot; title=&quot;1. 下载Linux版的Ngnix&quot;&gt;&lt;/a&gt;1. 下载Linux版的Ngnix&lt;/h3&gt;&lt;p&gt;&lt;img
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Software_Install" scheme="http://fyvan.github.io/categories/Software-Install/"/>
+    
+    
+      <category term="CentOS7, Nginx" scheme="http://fyvan.github.io/tags/CentOS7-Nginx/"/>
     
   </entry>
   

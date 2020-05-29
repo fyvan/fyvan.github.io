@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="CentOS7安装Mysql, Yvan Blog">
+    <meta name="keywords" content="CentOS7安装Nginx, Yvan Blog">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>CentOS7安装Mysql | Yvan Blog</title>
+    <title>CentOS7安装Nginx | Yvan Blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -268,12 +268,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/CentOS.png')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/nginx.png')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">CentOS7安装Mysql</h1>
+                    <h1 class="description center-align post-title">CentOS7安装Nginx</h1>
                 </div>
             </div>
         </div>
@@ -390,8 +390,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/CentOS7-mariadb/">
-                                <span class="chip bg-color">CentOS7, mariadb</span>
+                            <a href="/tags/CentOS7-Nginx/">
+                                <span class="chip bg-color">CentOS7, Nginx</span>
                             </a>
                         
                     </div>
@@ -431,260 +431,122 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="1-安装Maria-DB"><a href="#1-安装Maria-DB" class="headerlink" title="1. 安装Maria DB"></a>1. 安装Maria DB</h3><p>使用yum安装 (需要配置好yum,有网络)</p>
-<pre class=" language-shell"><code class="language-shell">yum install mariadb-server</code></pre>
-<p>需要依赖, 输入y 回车继续</p>
-<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsCAMAAABOo35HAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAC9UExURVlZWdPT07KysmRkZIWFhfT09JmZmWZmZm9vb39/fxkZGUxMTDMzM3p6epCQkKamppubm729venp6cjIyN7e3tbW1s/Pz8LCwnx8fLS0tFZWVoiIiI+Pj6GhoeTk5Glpabu7u93d3evr66CgoJSUlKqqqsnJyeDg4Hd3d8PDw+Xl5bi4uNHR0dvb26Ojo6urq+fn51hYWDg4OCgoKHBwcK2traenp0FBQe7u7vHx8U5OTre3t8zMzHV1df///7GrnpQAAAA/dFJOU///////////////////////////////////////////////////////////////////////////////////AI4mfBcAAAUGSURBVHja7NoJb6M4GMZxY0NCD64kve/pMZ2d3Z297+X7f6zFNmBAMUXa6URl/q9UJSWPUPzrizFWRUlNLgEBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYYIEFAVhggQUWWGBBABZYYIEFFlgQgAUWWGCBBRYEYIEFFlhggQUBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYn6cCIcRXgvX/h9qcIVBqDdbEM8RCxGCB9QqXYRwHYDHBgwXWl8eKZKiESHI3Ba1kWs3fKixcaJUl1YyeBm7Ocq+yLItUiVBGnXxenSHJolIKEcwHq6ikbOX1YGVzQCTN8LPmSLreghUl9sN4Uw7yajMrLC0TZ1ImzqY6FEop0+pIaEN5HaoOxVuwEqFyc4I46uSlzOLqgxlh6UaR9l3VYWl9Fdoxb1Q90KJtu41pwwFW/WHhTtW8i7TafLCqRsk6bsGw63L9qurXRmuIlbT9lDQnlXU+nBFW1Q2qnZbDprWa2tjR90LZFqx1/+Td/HpGWLlrLDvIwTcx6dQ1Vrntbig68cDms3JwbA5Y1azs1ger6sNV/bbIw1jU81MvNAGrl58RVn8ozW+btF08iGFoAlYvP3csfVur1gJBEIA1uBmue5dhZDOyO2epbmgCVi8/I6x0MMHH9pjsTfBhNzQBq5uPZoQlB0uH3DZG4EZqQ26fL3sZq5uf09Ih6qw3i/pm6BZO0qZX7rrUS68Xsbr5ZE4rePMk08pk9aUZugfqppvs6AM1Acvlo/StP+6EbW06z8hJqxbYp2BZPQUnFsLsKuhQdaHqn5ewbF7KXIn0jWO5MqOQ7RaNLPtbNMmmhimj0GUmYLl8Gs0Lq4wyPbTu1l2QKqHSouzs3OlDIslW5SQsnY/NXmFplyNvEuuLV/Tau9BzwiraDUSwXmysztYWWNtL1psXeumgIrDGaqXvBfUuvtqUYI3V2t1wk1e2msFluJJm6zDJXv/fIfjPP7DAAgsssCiwwAILLLDAosACCyywwAKLAgsssMACC6zt9fDz/v75tyOB+98PD2+ORgKffjw4OP1uJPDxl+Xy8v1I4MPF3t7VNyOB4/vF4uzdzrG+39f1kz/w66Guv/yBvw90KX/gZKkr8Qf+2dOV+gNHC12/7RxrabD2/a31bLAO/a11YbAO/K21MFhLf2s9Gqw9f2vdGqzFu11jnVusE2/gxmI9eQOnFuvYG7i0WH7uK4t15w2cWazrXWP9a7H8f/bQYvm/6IPF+sF/pVssf19Ii/WH/0K2WH/uGuvEWC39gSdj9Twy+Rqri5EZx1gt/IE7Y/XoD1wbq9vd3w1PlufnD2OBp+ebm/uxwPHF6emnscDR4vLy41jg7vHq6sNY4Pr27OyYdRaLUrDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssL6u+k+AAQCR9eHtLKvLfwAAAABJRU5ErkJggg==" data-original="../images/posts/SoftwareInstall-2020-05-26-CentOS-mysql/image-20200526161530741.png" alt="image-提示需要安装依赖"></p>
-<p>安装完成后如下所示:</p>
-<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsCAMAAABOo35HAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAC9UExURVlZWdPT07KysmRkZIWFhfT09JmZmWZmZm9vb39/fxkZGUxMTDMzM3p6epCQkKamppubm729venp6cjIyN7e3tbW1s/Pz8LCwnx8fLS0tFZWVoiIiI+Pj6GhoeTk5Glpabu7u93d3evr66CgoJSUlKqqqsnJyeDg4Hd3d8PDw+Xl5bi4uNHR0dvb26Ojo6urq+fn51hYWDg4OCgoKHBwcK2traenp0FBQe7u7vHx8U5OTre3t8zMzHV1df///7GrnpQAAAA/dFJOU///////////////////////////////////////////////////////////////////////////////////AI4mfBcAAAUGSURBVHja7NoJb6M4GMZxY0NCD64kve/pMZ2d3Z297+X7f6zFNmBAMUXa6URl/q9UJSWPUPzrizFWRUlNLgEBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYYIEFAVhggQUWWGBBABZYYIEFFlgQgAUWWGCBBRYEYIEFFlhggQUBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYn6cCIcRXgvX/h9qcIVBqDdbEM8RCxGCB9QqXYRwHYDHBgwXWl8eKZKiESHI3Ba1kWs3fKixcaJUl1YyeBm7Ocq+yLItUiVBGnXxenSHJolIKEcwHq6ikbOX1YGVzQCTN8LPmSLreghUl9sN4Uw7yajMrLC0TZ1ImzqY6FEop0+pIaEN5HaoOxVuwEqFyc4I46uSlzOLqgxlh6UaR9l3VYWl9Fdoxb1Q90KJtu41pwwFW/WHhTtW8i7TafLCqRsk6bsGw63L9qurXRmuIlbT9lDQnlXU+nBFW1Q2qnZbDprWa2tjR90LZFqx1/+Td/HpGWLlrLDvIwTcx6dQ1Vrntbig68cDms3JwbA5Y1azs1ger6sNV/bbIw1jU81MvNAGrl58RVn8ozW+btF08iGFoAlYvP3csfVur1gJBEIA1uBmue5dhZDOyO2epbmgCVi8/I6x0MMHH9pjsTfBhNzQBq5uPZoQlB0uH3DZG4EZqQ26fL3sZq5uf09Ih6qw3i/pm6BZO0qZX7rrUS68Xsbr5ZE4rePMk08pk9aUZugfqppvs6AM1Acvlo/StP+6EbW06z8hJqxbYp2BZPQUnFsLsKuhQdaHqn5ewbF7KXIn0jWO5MqOQ7RaNLPtbNMmmhimj0GUmYLl8Gs0Lq4wyPbTu1l2QKqHSouzs3OlDIslW5SQsnY/NXmFplyNvEuuLV/Tau9BzwiraDUSwXmysztYWWNtL1psXeumgIrDGaqXvBfUuvtqUYI3V2t1wk1e2msFluJJm6zDJXv/fIfjPP7DAAgsssCiwwAILLLDAosACCyywwAKLAgsssMACC6zt9fDz/v75tyOB+98PD2+ORgKffjw4OP1uJPDxl+Xy8v1I4MPF3t7VNyOB4/vF4uzdzrG+39f1kz/w66Guv/yBvw90KX/gZKkr8Qf+2dOV+gNHC12/7RxrabD2/a31bLAO/a11YbAO/K21MFhLf2s9Gqw9f2vdGqzFu11jnVusE2/gxmI9eQOnFuvYG7i0WH7uK4t15w2cWazrXWP9a7H8f/bQYvm/6IPF+sF/pVssf19Ii/WH/0K2WH/uGuvEWC39gSdj9Twy+Rqri5EZx1gt/IE7Y/XoD1wbq9vd3w1PlufnD2OBp+ebm/uxwPHF6emnscDR4vLy41jg7vHq6sNY4Pr27OyYdRaLUrDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssL6u+k+AAQCR9eHtLKvLfwAAAABJRU5ErkJggg==" data-original="../images/posts/SoftwareInstall-2020-05-26-CentOS-mysql/image-20200526161623101.png" alt="image-安装完成"></p>
-<h3 id="2-MariaDB-命令"><a href="#2-MariaDB-命令" class="headerlink" title="2. MariaDB 命令"></a>2. MariaDB 命令</h3><ol>
-<li>启动数据库:</li>
-</ol>
-<pre class=" language-shell"><code class="language-shell">systemctl start mariadb</code></pre>
-<ol start="2">
-<li>停止数据库:</li>
-</ol>
-<pre class=" language-shell"><code class="language-shell">systemctl stop mariadb</code></pre>
-<ol start="3">
-<li>重启数据库:</li>
-</ol>
-<pre class=" language-shell"><code class="language-shell">systemctl restart mariadb</code></pre>
-<h3 id="3-MariaDB-配置"><a href="#3-MariaDB-配置" class="headerlink" title="3. MariaDB 配置"></a>3. MariaDB 配置</h3><p>输入<code>mysql_secure_installation</code>命令配置数据库,如下注释中的解释</p>
-<pre class=" language-shell"><code class="language-shell">[root@localhost src]# mysql_secure_installation 
-
-NOTE: RUNNING ALL PARTS OF THIS SCRIPT IS RECOMMENDED FOR ALL MariaDB
-      SERVERS IN PRODUCTION USE!  PLEASE READ EACH STEP CAREFULLY!
-
-In order to log into MariaDB to secure it, we'll need the current
-password for the root user.  If you've just installed MariaDB, and
-you haven't set the root password yet, the password will be blank,
-so you should just press enter here.
-
-Enter current password for root (enter for none): 
-OK, successfully used password, moving on...
-
-Setting the root password ensures that nobody can log into the MariaDB
-root user without the proper authorisation.
-
-Set root password? [Y/n] Y    # 设置密码 y
-New password:                 # 新密码
-Re-enter new password:         # 再次输入密码
-Password updated successfully!
-Reloading privilege tables..
- ... Success!
-
-
-By default, a MariaDB installation has an anonymous user, allowing anyone
-to log into MariaDB without having to have a user account created for
-them.  This is intended only for testing, and to make the installation
-go a bit smoother.  You should remove them before moving into a
-production environment.
-
-Remove anonymous users? [Y/n] Y        #是否移除匿名用户,输入Y,回车继续 
- ... Success!
-
-Normally, root should only be allowed to connect from 'localhost'.  This
-ensures that someone cannot guess at the root password from the network.
-
-# 拒绝root远程登录,n, 不管y/n,都会拒绝root远程登录
-Disallow root login remotely? [Y/n] n 
- ... skipping.
-
-By default, MariaDB comes with a database named 'test' that anyone can
-access.  This is also intended only for testing, and should be removed
-before moving into a production environment.
-
-# 删除test数据库,y:删除 n:不删除. 数据库中会有一个test数据库,一般不需要
-Remove test database and access to it? [Y/n] n 
- ... skipping.
-
-Reloading the privilege tables will ensure that all changes made so far
-will take effect immediately.
-
-Reload privilege tables now? [Y/n] y # 重新加载权限表,y. 或者重启服务也行
- ... Success!
-
-Cleaning up...
-
-All done!  If you've completed all of the above steps, your MariaDB
-installation should now be secure.
-
-Thanks for using MariaDB!
-</code></pre>
-<h3 id="4-数据库登录测试"><a href="#4-数据库登录测试" class="headerlink" title="4. 数据库登录测试"></a>4. 数据库登录测试</h3><p>使用用户名:root &amp; 密码:root 登录数据库</p>
-<pre class=" language-shell"><code class="language-shell">[root@localhost src]# mysql -uroot -p
-Enter password: 
-Welcome to the MariaDB monitor.  Commands end with ; or \g.
-Your MariaDB connection id is 7
-Server version: 5.5.65-MariaDB MariaDB Server
-
-Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
-
-Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
-
-MariaDB [(none)]> </code></pre>
-<h3 id="5-设定远程访问"><a href="#5-设定远程访问" class="headerlink" title="5. 设定远程访问"></a>5. 设定远程访问</h3><p>说明:Mysql数据库默认条件下不允许远程用户访问数据库,只允许本地服务通过127.0.0.1/localhost的方式访问!</p>
-<p>需求:想通过Windows的SqlYog程序远程访问数据库,则必须修改mysql的权限列表.</p>
+                <h3 id="1-下载Linux版的Ngnix"><a href="#1-下载Linux版的Ngnix" class="headerlink" title="1. 下载Linux版的Ngnix"></a>1. 下载Linux版的Ngnix</h3><p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsCAMAAABOo35HAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAC9UExURVlZWdPT07KysmRkZIWFhfT09JmZmWZmZm9vb39/fxkZGUxMTDMzM3p6epCQkKamppubm729venp6cjIyN7e3tbW1s/Pz8LCwnx8fLS0tFZWVoiIiI+Pj6GhoeTk5Glpabu7u93d3evr66CgoJSUlKqqqsnJyeDg4Hd3d8PDw+Xl5bi4uNHR0dvb26Ojo6urq+fn51hYWDg4OCgoKHBwcK2traenp0FBQe7u7vHx8U5OTre3t8zMzHV1df///7GrnpQAAAA/dFJOU///////////////////////////////////////////////////////////////////////////////////AI4mfBcAAAUGSURBVHja7NoJb6M4GMZxY0NCD64kve/pMZ2d3Z297+X7f6zFNmBAMUXa6URl/q9UJSWPUPzrizFWRUlNLgEBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYYIEFAVhggQUWWGBBABZYYIEFFlgQgAUWWGCBBRYEYIEFFlhggQUBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYn6cCIcRXgvX/h9qcIVBqDdbEM8RCxGCB9QqXYRwHYDHBgwXWl8eKZKiESHI3Ba1kWs3fKixcaJUl1YyeBm7Ocq+yLItUiVBGnXxenSHJolIKEcwHq6ikbOX1YGVzQCTN8LPmSLreghUl9sN4Uw7yajMrLC0TZ1ImzqY6FEop0+pIaEN5HaoOxVuwEqFyc4I46uSlzOLqgxlh6UaR9l3VYWl9Fdoxb1Q90KJtu41pwwFW/WHhTtW8i7TafLCqRsk6bsGw63L9qurXRmuIlbT9lDQnlXU+nBFW1Q2qnZbDprWa2tjR90LZFqx1/+Td/HpGWLlrLDvIwTcx6dQ1Vrntbig68cDms3JwbA5Y1azs1ger6sNV/bbIw1jU81MvNAGrl58RVn8ozW+btF08iGFoAlYvP3csfVur1gJBEIA1uBmue5dhZDOyO2epbmgCVi8/I6x0MMHH9pjsTfBhNzQBq5uPZoQlB0uH3DZG4EZqQ26fL3sZq5uf09Ih6qw3i/pm6BZO0qZX7rrUS68Xsbr5ZE4rePMk08pk9aUZugfqppvs6AM1Acvlo/StP+6EbW06z8hJqxbYp2BZPQUnFsLsKuhQdaHqn5ewbF7KXIn0jWO5MqOQ7RaNLPtbNMmmhimj0GUmYLl8Gs0Lq4wyPbTu1l2QKqHSouzs3OlDIslW5SQsnY/NXmFplyNvEuuLV/Tau9BzwiraDUSwXmysztYWWNtL1psXeumgIrDGaqXvBfUuvtqUYI3V2t1wk1e2msFluJJm6zDJXv/fIfjPP7DAAgsssCiwwAILLLDAosACCyywwAKLAgsssMACC6zt9fDz/v75tyOB+98PD2+ORgKffjw4OP1uJPDxl+Xy8v1I4MPF3t7VNyOB4/vF4uzdzrG+39f1kz/w66Guv/yBvw90KX/gZKkr8Qf+2dOV+gNHC12/7RxrabD2/a31bLAO/a11YbAO/K21MFhLf2s9Gqw9f2vdGqzFu11jnVusE2/gxmI9eQOnFuvYG7i0WH7uK4t15w2cWazrXWP9a7H8f/bQYvm/6IPF+sF/pVssf19Ii/WH/0K2WH/uGuvEWC39gSdj9Twy+Rqri5EZx1gt/IE7Y/XoD1wbq9vd3w1PlufnD2OBp+ebm/uxwPHF6emnscDR4vLy41jg7vHq6sNY4Pr27OyYdRaLUrDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssL6u+k+AAQCR9eHtLKvLfwAAAABJRU5ErkJggg==" data-original="../images/posts/SoftwareInstall-2020-05-26-Centos-nginx/image-20200527112925453.png" alt="下载Nginx"></p>
+<p><a href="https://nginx.org/download/nginx-1.19.0.tar.gz" target="_blank" rel="noopener">下载链接</a></p>
+<h3 id="2-上传文件到Linux服务器"><a href="#2-上传文件到Linux服务器" class="headerlink" title="2. 上传文件到Linux服务器"></a>2. 上传文件到Linux服务器</h3><p>使用lrzsz方式上传,直接拖拽</p>
+<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsCAMAAABOo35HAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAC9UExURVlZWdPT07KysmRkZIWFhfT09JmZmWZmZm9vb39/fxkZGUxMTDMzM3p6epCQkKamppubm729venp6cjIyN7e3tbW1s/Pz8LCwnx8fLS0tFZWVoiIiI+Pj6GhoeTk5Glpabu7u93d3evr66CgoJSUlKqqqsnJyeDg4Hd3d8PDw+Xl5bi4uNHR0dvb26Ojo6urq+fn51hYWDg4OCgoKHBwcK2traenp0FBQe7u7vHx8U5OTre3t8zMzHV1df///7GrnpQAAAA/dFJOU///////////////////////////////////////////////////////////////////////////////////AI4mfBcAAAUGSURBVHja7NoJb6M4GMZxY0NCD64kve/pMZ2d3Z297+X7f6zFNmBAMUXa6URl/q9UJSWPUPzrizFWRUlNLgEBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYYIEFAVhggQUWWGBBABZYYIEFFlgQgAUWWGCBBRYEYIEFFlhggQUBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYn6cCIcRXgvX/h9qcIVBqDdbEM8RCxGCB9QqXYRwHYDHBgwXWl8eKZKiESHI3Ba1kWs3fKixcaJUl1YyeBm7Ocq+yLItUiVBGnXxenSHJolIKEcwHq6ikbOX1YGVzQCTN8LPmSLreghUl9sN4Uw7yajMrLC0TZ1ImzqY6FEop0+pIaEN5HaoOxVuwEqFyc4I46uSlzOLqgxlh6UaR9l3VYWl9Fdoxb1Q90KJtu41pwwFW/WHhTtW8i7TafLCqRsk6bsGw63L9qurXRmuIlbT9lDQnlXU+nBFW1Q2qnZbDprWa2tjR90LZFqx1/+Td/HpGWLlrLDvIwTcx6dQ1Vrntbig68cDms3JwbA5Y1azs1ger6sNV/bbIw1jU81MvNAGrl58RVn8ozW+btF08iGFoAlYvP3csfVur1gJBEIA1uBmue5dhZDOyO2epbmgCVi8/I6x0MMHH9pjsTfBhNzQBq5uPZoQlB0uH3DZG4EZqQ26fL3sZq5uf09Ih6qw3i/pm6BZO0qZX7rrUS68Xsbr5ZE4rePMk08pk9aUZugfqppvs6AM1Acvlo/StP+6EbW06z8hJqxbYp2BZPQUnFsLsKuhQdaHqn5ewbF7KXIn0jWO5MqOQ7RaNLPtbNMmmhimj0GUmYLl8Gs0Lq4wyPbTu1l2QKqHSouzs3OlDIslW5SQsnY/NXmFplyNvEuuLV/Tau9BzwiraDUSwXmysztYWWNtL1psXeumgIrDGaqXvBfUuvtqUYI3V2t1wk1e2msFluJJm6zDJXv/fIfjPP7DAAgsssCiwwAILLLDAosACCyywwAKLAgsssMACC6zt9fDz/v75tyOB+98PD2+ORgKffjw4OP1uJPDxl+Xy8v1I4MPF3t7VNyOB4/vF4uzdzrG+39f1kz/w66Guv/yBvw90KX/gZKkr8Qf+2dOV+gNHC12/7RxrabD2/a31bLAO/a11YbAO/K21MFhLf2s9Gqw9f2vdGqzFu11jnVusE2/gxmI9eQOnFuvYG7i0WH7uK4t15w2cWazrXWP9a7H8f/bQYvm/6IPF+sF/pVssf19Ii/WH/0K2WH/uGuvEWC39gSdj9Twy+Rqri5EZx1gt/IE7Y/XoD1wbq9vd3w1PlufnD2OBp+ebm/uxwPHF6emnscDR4vLy41jg7vHq6sNY4Pr27OyYdRaLUrDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssL6u+k+AAQCR9eHtLKvLfwAAAABJRU5ErkJggg==" data-original="../images/posts/SoftwareInstall-2020-05-26-Centos-nginx/image-20200527113121487.png" alt="上传成功目录结构"></p>
+<h3 id="3-解压上传文件-并删除压缩包"><a href="#3-解压上传文件-并删除压缩包" class="headerlink" title="3. 解压上传文件,并删除压缩包"></a>3. 解压上传文件,并删除压缩包</h3><pre class=" language-shell"><code class="language-shell"># 解压文件
+[root@localhost src]# tar -xzvf nginx-1.19.0.tar.gz 
+nginx-1.19.0/
+nginx-1.19.0/auto/
+......
+nginx-1.19.0/auto/cc/name
+nginx-1.19.0/auto/cc/owc
+nginx-1.19.0/auto/cc/sunc
+# 查看文件目录结构
+[root@localhost src]# ls
+images  jdk1.8  nginx-1.19.0  nginx-1.19.0.tar.gz  tomcats
+# 删除压缩包
+[root@localhost src]# rm -rf nginx-1.19.0.tar.gz </code></pre>
+<h3 id="4-安装Nginx"><a href="#4-安装Nginx" class="headerlink" title="4. 安装Nginx"></a>4. 安装Nginx</h3><p>nginx安装中会有<code>源文件目录</code>和<code>工作目录</code>之分</p>
 <ol>
-<li>本地登录数据库:</li>
+<li>配置Nginx</li>
 </ol>
-<pre class=" language-shell"><code class="language-shell">[root@localhost src]# mysql -uroot -p
-Enter password: 
-Welcome to the MariaDB monitor.  Commands end with ; or \g.
-Your MariaDB connection id is 8
-Server version: 5.5.65-MariaDB MariaDB Server
+<pre class=" language-shell"><code class="language-shell"># 查看文件目录结构
+[root@localhost nginx-1.19.0]# ls
+auto  CHANGES  CHANGES.ru  conf  configure  contrib  html  LICENSE  man  README  src
+[root@localhost nginx-1.19.0]# ./configure 
+checking for OS
+ + Linux 3.10.0-1062.18.1.el7.x86_64 x86_64
+checking for C compiler ... found
+ + using GNU C compiler
+ + gcc version: 4.8.5 20150623 (Red Hat 4.8.5-39) (GCC) 
+.......    # 校验文件
+creating objs/Makefile
 
-Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+Configuration summary
+  + using system PCRE library
+  + OpenSSL library is not used
+  + using system zlib library
 
-Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
-
-MariaDB [(none)]> 
-</code></pre>
+  nginx path prefix: "/usr/local/nginx"    # 工作目录
+  nginx binary file: "/usr/local/nginx/sbin/nginx"
+  nginx modules path: "/usr/local/nginx/modules"
+  nginx configuration prefix: "/usr/local/nginx/conf"
+  nginx configuration file: "/usr/local/nginx/conf/nginx.conf"
+  nginx pid file: "/usr/local/nginx/logs/nginx.pid"
+  nginx error log file: "/usr/local/nginx/logs/error.log"
+  nginx http access log file: "/usr/local/nginx/logs/access.log"
+  nginx http client request body temporary files: "client_body_temp"
+  nginx http proxy temporary files: "proxy_temp"
+  nginx http fastcgi temporary files: "fastcgi_temp"
+  nginx http uwsgi temporary files: "uwsgi_temp"
+  nginx http scgi temporary files: "scgi_temp"</code></pre>
 <ol start="2">
-<li>查看并切换数据库:</li>
+<li>编译源文件</li>
 </ol>
-<pre class=" language-mysql"><code class="language-mysql">MariaDB [(none)]> show databases;    # 查看数据库
-+--------------------+
-| Database           |
-+--------------------+
-| information_schema |
-| mysql              |
-| performance_schema |
-| test               |
-+--------------------+
-4 rows in set (0.00 sec)
-
-MariaDB [(none)]> use mysql;    # 切换数据库
-Reading table information for completion of table and column names
-You can turn off this feature to get a quicker startup with -A
-
-Database changed
-MariaDB [mysql]> </code></pre>
+<pre class=" language-shell"><code class="language-shell">[root@localhost nginx-1.19.0]# make 
+make -f objs/Makefile
+make[1]: 进入目录“/usr/local/src/nginx-1.19.0”
+cc -c -pipe  -O -W -Wall -Wpointer-arith -Wno-unused-parameter -Werror -g  -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs \
+......
+-Wl,-E
+sed -e "s|%%PREFIX%%|/usr/local/nginx|" \
+    -e "s|%%PID_PATH%%|/usr/local/nginx/logs/nginx.pid|" \
+    -e "s|%%CONF_PATH%%|/usr/local/nginx/conf/nginx.conf|" \
+    -e "s|%%ERROR_LOG_PATH%%|/usr/local/nginx/logs/error.log|" \
+    < man/nginx.8 > objs/nginx.8
+make[1]: 离开目录“/usr/local/src/nginx-1.19.0”</code></pre>
 <ol start="3">
-<li>查看数据库表信息:</li>
+<li>执行安装指令</li>
 </ol>
-<pre class=" language-mysql"><code class="language-mysql">MariaDB [mysql]> show tables;    # 查看数据库表信息
-+---------------------------+
-| Tables_in_mysql           |
-+---------------------------+
-| columns_priv              |
-| db                        |
-| event                     |
-| func                      |
-| general_log               |
-| help_category             |
-| help_keyword              |
-| help_relation             |
-| help_topic                |
-| host                      |
-| ndb_binlog_index          |
-| plugin                    |
-| proc                      |
-| procs_priv                |
-| proxies_priv              |
-| servers                   |
-| slow_log                  |
-| tables_priv               |
-| time_zone                 |
-| time_zone_leap_second     |
-| time_zone_name            |
-| time_zone_transition      |
-| time_zone_transition_type |
-| user                      |
-+---------------------------+
-24 rows in set (0.00 sec)</code></pre>
+<pre class=" language-shell"><code class="language-shell">[root@localhost nginx-1.19.0]# make install
+make -f objs/Makefile install
+make[1]: 进入目录“/usr/local/src/nginx-1.19.0”
+test -d '/usr/local/nginx' || mkdir -p '/usr/local/nginx'
+...
+make[1]: 离开目录“/usr/local/src/nginx-1.19.0”</code></pre>
 <ol start="4">
-<li>查看root账户权限信息</li>
+<li>检查安装路径</li>
 </ol>
-<pre class=" language-mysql"><code class="language-mysql"># host : 表示允许访问的主机
-# user : 用户信息
-# password : 密码信息 (MD5加密)
-
-MariaDB [mysql]> select host,user,password from user;
-+-----------+------+-------------------------------------------+
-| host      | user | password                                  |
-+-----------+------+-------------------------------------------+
-| localhost | root | *81F5E21E35407D884A6CD4A731AEBFB6AF209E1B |
-| 127.0.0.1 | root | *81F5E21E35407D884A6CD4A731AEBFB6AF209E1B |
-| ::1       | root | *81F5E21E35407D884A6CD4A731AEBFB6AF209E1B |
-+-----------+------+-------------------------------------------+
-3 rows in set (0.00 sec)</code></pre>
-<ol start="5">
-<li>修改用户权限列表,实现用户远程访问</li>
+<pre class=" language-shell"><code class="language-shell"># 工作目录
+[root@localhost nginx-1.19.0]# whereis nginx
+nginx: /usr/local/nginx</code></pre>
+<h3 id="5-Nginx命令"><a href="#5-Nginx命令" class="headerlink" title="5. Nginx命令"></a>5. Nginx命令</h3><ol>
+<li>进入工作目录,查看目录结构</li>
 </ol>
-<p>将与主机名相等的字段改为<code>" % "</code>,我的主机名为root</p>
-<pre class=" language-mysql"><code class="language-mysql">MariaDB [mysql]> update user set host='%' where host='localhost';
-Query OK, 1 rows affected (0.00 sec)
-Rows matched: 1  Changed: 1  Warnings: 0
-
-MariaDB [mysql]> select host,user,password from user;
-+-----------+------+-------------------------------------------+
-| host      | user | password                                  |
-+-----------+------+-------------------------------------------+
-| %            | root | *81F5E21E35407D884A6CD4A731AEBFB6AF209E1B |
-| 127.0.0.1 | root | *81F5E21E35407D884A6CD4A731AEBFB6AF209E1B |
-| ::1       | root | *81F5E21E35407D884A6CD4A731AEBFB6AF209E1B |
-+-----------+------+-------------------------------------------+
-3 rows in set (0.00 sec)</code></pre>
-<ol start="6">
-<li>刷新权限列表或者重启数据库服务</li>
-</ol>
-<pre class=" language-mysql"><code class="language-mysql"># 刷新权限列表
-MariaDB [mysql]> flush privileges;        
-Query OK, 0 rows affected (0.00 sec)
-
-# 或者重启数据库服务
-[root@localhost src]# systemctl restart mariadb
-[root@localhost src]# </code></pre>
-<ol start="7">
-<li>关闭Linux防火墙,使用SQLyog连接数据库</li>
-</ol>
-<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsCAMAAABOo35HAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAC9UExURVlZWdPT07KysmRkZIWFhfT09JmZmWZmZm9vb39/fxkZGUxMTDMzM3p6epCQkKamppubm729venp6cjIyN7e3tbW1s/Pz8LCwnx8fLS0tFZWVoiIiI+Pj6GhoeTk5Glpabu7u93d3evr66CgoJSUlKqqqsnJyeDg4Hd3d8PDw+Xl5bi4uNHR0dvb26Ojo6urq+fn51hYWDg4OCgoKHBwcK2traenp0FBQe7u7vHx8U5OTre3t8zMzHV1df///7GrnpQAAAA/dFJOU///////////////////////////////////////////////////////////////////////////////////AI4mfBcAAAUGSURBVHja7NoJb6M4GMZxY0NCD64kve/pMZ2d3Z297+X7f6zFNmBAMUXa6URl/q9UJSWPUPzrizFWRUlNLgEBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYYIEFAVhggQUWWGBBABZYYIEFFlgQgAUWWGCBBRYEYIEFFlhggQUBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYn6cCIcRXgvX/h9qcIVBqDdbEM8RCxGCB9QqXYRwHYDHBgwXWl8eKZKiESHI3Ba1kWs3fKixcaJUl1YyeBm7Ocq+yLItUiVBGnXxenSHJolIKEcwHq6ikbOX1YGVzQCTN8LPmSLreghUl9sN4Uw7yajMrLC0TZ1ImzqY6FEop0+pIaEN5HaoOxVuwEqFyc4I46uSlzOLqgxlh6UaR9l3VYWl9Fdoxb1Q90KJtu41pwwFW/WHhTtW8i7TafLCqRsk6bsGw63L9qurXRmuIlbT9lDQnlXU+nBFW1Q2qnZbDprWa2tjR90LZFqx1/+Td/HpGWLlrLDvIwTcx6dQ1Vrntbig68cDms3JwbA5Y1azs1ger6sNV/bbIw1jU81MvNAGrl58RVn8ozW+btF08iGFoAlYvP3csfVur1gJBEIA1uBmue5dhZDOyO2epbmgCVi8/I6x0MMHH9pjsTfBhNzQBq5uPZoQlB0uH3DZG4EZqQ26fL3sZq5uf09Ih6qw3i/pm6BZO0qZX7rrUS68Xsbr5ZE4rePMk08pk9aUZugfqppvs6AM1Acvlo/StP+6EbW06z8hJqxbYp2BZPQUnFsLsKuhQdaHqn5ewbF7KXIn0jWO5MqOQ7RaNLPtbNMmmhimj0GUmYLl8Gs0Lq4wyPbTu1l2QKqHSouzs3OlDIslW5SQsnY/NXmFplyNvEuuLV/Tau9BzwiraDUSwXmysztYWWNtL1psXeumgIrDGaqXvBfUuvtqUYI3V2t1wk1e2msFluJJm6zDJXv/fIfjPP7DAAgsssCiwwAILLLDAosACCyywwAKLAgsssMACC6zt9fDz/v75tyOB+98PD2+ORgKffjw4OP1uJPDxl+Xy8v1I4MPF3t7VNyOB4/vF4uzdzrG+39f1kz/w66Guv/yBvw90KX/gZKkr8Qf+2dOV+gNHC12/7RxrabD2/a31bLAO/a11YbAO/K21MFhLf2s9Gqw9f2vdGqzFu11jnVusE2/gxmI9eQOnFuvYG7i0WH7uK4t15w2cWazrXWP9a7H8f/bQYvm/6IPF+sF/pVssf19Ii/WH/0K2WH/uGuvEWC39gSdj9Twy+Rqri5EZx1gt/IE7Y/XoD1wbq9vd3w1PlufnD2OBp+ebm/uxwPHF6emnscDR4vLy41jg7vHq6sNY4Pr27OyYdRaLUrDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssL6u+k+AAQCR9eHtLKvLfwAAAABJRU5ErkJggg==" data-original="../images/posts/SoftwareInstall-2020-05-26-CentOS-mysql/image-20200526173825486.png" alt="image-SQLyog连接数据库"></p>
-<h3 id="6-Linux中的防火墙"><a href="#6-Linux中的防火墙" class="headerlink" title="6. Linux中的防火墙"></a>6. Linux中的防火墙</h3><ol>
-<li>检查防火墙状态信息</li>
-</ol>
-<pre class=" language-shell"><code class="language-shell">[root@localhost src]# firewall-cmd --state
-running</code></pre>
+<pre class=" language-shell"><code class="language-shell">[root@localhost nginx-1.19.0]# cd /usr/local/nginx/
+[root@localhost nginx]# ll
+总用量 4
+drwxr-xr-x. 2 root root 4096 5月  27 11:43 conf    # 配置文件
+drwxr-xr-x. 2 root root   40 5月  27 11:43 html    # 欢迎页
+drwxr-xr-x. 2 root root    6 5月  27 11:43 logs    # 日志文件
+drwxr-xr-x. 2 root root   19 5月  27 11:43 sbin    # nginx命令</code></pre>
 <ol start="2">
-<li>临时关闭防火墙操作,系统重启后防火墙会重新开启.</li>
+<li>使用nginx命令</li>
 </ol>
-<pre class=" language-shell"><code class="language-shell">[root@localhost src]# systemctl stop firewalld.service
-[root@localhost src]# firewall-cmd --state
-not running</code></pre>
-<ol start="3">
-<li>开启防火墙操作</li>
-</ol>
-<pre class=" language-shell"><code class="language-shell">[root@localhost src]# systemctl stop firewalld.service
-[root@localhost src]# firewall-cmd --state
-not running</code></pre>
-<ol start="4">
-<li>永久关闭防火墙操作</li>
-</ol>
-<pre class=" language-shell"><code class="language-shell"># 表示系统下次启动时不开启防火墙
-[root@localhost src]# systemctl disable firewalld.service
-Removed symlink /etc/systemd/system/multi-user.target.wants/firewalld.service.
-Removed symlink /etc/systemd/system/dbus-org.fedoraproject.FirewallD1.service.
-# 防火墙还是运行状态
-[root@localhost src]# firewall-cmd --state
-running
-# 还需要将当前防火墙关闭
-[root@localhost src]# systemctl stop firewalld.service
-[root@localhost src]# firewall-cmd --state
-not running</code></pre>
-<ol start="5">
-<li>永久开启防火墙操作</li>
-</ol>
-<pre class=" language-shell"><code class="language-shell"># 表示系统下次启动时开启防火墙
-[root@localhost src]# systemctl enable firewalld.service
-Created symlink from /etc/systemd/system/dbus-org.fedoraproject.FirewallD1.service to /usr/lib/systemd/system/firewalld.service.
-Created symlink from /etc/systemd/system/multi-user.target.wants/firewalld.service to /usr/lib/systemd/system/firewalld.service.
-# 防火墙还是关闭状态
-[root@localhost src]# firewall-cmd --state
-not running
-# 还需要将当前防火墙开启
-[root@localhost src]# systemctl start firewalld.service
-[root@localhost src]# firewall-cmd --state
-running</code></pre>
+<ul>
+<li>启动nginx并查看进程        ./nginx</li>
+</ul>
+<pre class=" language-shell"><code class="language-shell">[root@localhost nginx]# cd sbin/
+[root@localhost sbin]# ll
+总用量 3764
+-rwxr-xr-x. 1 root root 3851112 5月  27 11:43 nginx
+[root@localhost sbin]# ./nginx 
+[root@localhost sbin]# ps -ef | grep nginx 
+root      12672      1  0 11:49 ?        00:00:00 nginx: master process ./nginx
+nobody    12673  12672  0 11:49 ?        00:00:00 nginx: worker process
+root      12687   1829  0 11:49 pts/0    00:00:00 grep --color=auto nginx</code></pre>
+<ul>
+<li>更新nginx配置</li>
+</ul>
+<pre class=" language-shell"><code class="language-shell">[root@localhost sbin]# ./nginx -s reload</code></pre>
+<ul>
+<li>停止nginx服务</li>
+</ul>
+<pre class=" language-shell"><code class="language-shell">[root@localhost sbin]# ./nginx -s stop</code></pre>
+<h3 id="6-测试Nginx"><a href="#6-测试Nginx" class="headerlink" title="6. 测试Nginx"></a>6. 测试Nginx</h3><p>window浏览器访问localhost,虚拟机访问分配的ip地址:192.168.126.129</p>
+<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsCAMAAABOo35HAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAC9UExURVlZWdPT07KysmRkZIWFhfT09JmZmWZmZm9vb39/fxkZGUxMTDMzM3p6epCQkKamppubm729venp6cjIyN7e3tbW1s/Pz8LCwnx8fLS0tFZWVoiIiI+Pj6GhoeTk5Glpabu7u93d3evr66CgoJSUlKqqqsnJyeDg4Hd3d8PDw+Xl5bi4uNHR0dvb26Ojo6urq+fn51hYWDg4OCgoKHBwcK2traenp0FBQe7u7vHx8U5OTre3t8zMzHV1df///7GrnpQAAAA/dFJOU///////////////////////////////////////////////////////////////////////////////////AI4mfBcAAAUGSURBVHja7NoJb6M4GMZxY0NCD64kve/pMZ2d3Z297+X7f6zFNmBAMUXa6URl/q9UJSWPUPzrizFWRUlNLgEBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYYIEFAVhggQUWWGBBABZYYIEFFlgQgAUWWGCBBRYEYIEFFlhggQUBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYn6cCIcRXgvX/h9qcIVBqDdbEM8RCxGCB9QqXYRwHYDHBgwXWl8eKZKiESHI3Ba1kWs3fKixcaJUl1YyeBm7Ocq+yLItUiVBGnXxenSHJolIKEcwHq6ikbOX1YGVzQCTN8LPmSLreghUl9sN4Uw7yajMrLC0TZ1ImzqY6FEop0+pIaEN5HaoOxVuwEqFyc4I46uSlzOLqgxlh6UaR9l3VYWl9Fdoxb1Q90KJtu41pwwFW/WHhTtW8i7TafLCqRsk6bsGw63L9qurXRmuIlbT9lDQnlXU+nBFW1Q2qnZbDprWa2tjR90LZFqx1/+Td/HpGWLlrLDvIwTcx6dQ1Vrntbig68cDms3JwbA5Y1azs1ger6sNV/bbIw1jU81MvNAGrl58RVn8ozW+btF08iGFoAlYvP3csfVur1gJBEIA1uBmue5dhZDOyO2epbmgCVi8/I6x0MMHH9pjsTfBhNzQBq5uPZoQlB0uH3DZG4EZqQ26fL3sZq5uf09Ih6qw3i/pm6BZO0qZX7rrUS68Xsbr5ZE4rePMk08pk9aUZugfqppvs6AM1Acvlo/StP+6EbW06z8hJqxbYp2BZPQUnFsLsKuhQdaHqn5ewbF7KXIn0jWO5MqOQ7RaNLPtbNMmmhimj0GUmYLl8Gs0Lq4wyPbTu1l2QKqHSouzs3OlDIslW5SQsnY/NXmFplyNvEuuLV/Tau9BzwiraDUSwXmysztYWWNtL1psXeumgIrDGaqXvBfUuvtqUYI3V2t1wk1e2msFluJJm6zDJXv/fIfjPP7DAAgsssCiwwAILLLDAosACCyywwAKLAgsssMACC6zt9fDz/v75tyOB+98PD2+ORgKffjw4OP1uJPDxl+Xy8v1I4MPF3t7VNyOB4/vF4uzdzrG+39f1kz/w66Guv/yBvw90KX/gZKkr8Qf+2dOV+gNHC12/7RxrabD2/a31bLAO/a11YbAO/K21MFhLf2s9Gqw9f2vdGqzFu11jnVusE2/gxmI9eQOnFuvYG7i0WH7uK4t15w2cWazrXWP9a7H8f/bQYvm/6IPF+sF/pVssf19Ii/WH/0K2WH/uGuvEWC39gSdj9Twy+Rqri5EZx1gt/IE7Y/XoD1wbq9vd3w1PlufnD2OBp+ebm/uxwPHF6emnscDR4vLy41jg7vHq6sNY4Pr27OyYdRaLUrDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssL6u+k+AAQCR9eHtLKvLfwAAAABJRU5ErkJggg==" data-original="../images/posts/SoftwareInstall-2020-05-26-Centos-nginx/image-20200527115636132.png" alt="nginx欢迎首页"></p>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -766,8 +628,8 @@ running</code></pre>
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/CentOS7-mariadb/">
-                                    <span class="chip bg-color">CentOS7, mariadb</span>
+                                <a href="/tags/CentOS7-Nginx/">
+                                    <span class="chip bg-color">CentOS7, Nginx</span>
                                 </a>
                             
                         </div>
@@ -1198,10 +1060,9 @@ running</code></pre>
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
                 <a href="/undefined/981a.html">
                     <div class="card-image">
@@ -1218,9 +1079,9 @@ running</code></pre>
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-26
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-05-26
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -1233,7 +1094,6 @@ running</code></pre>
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
