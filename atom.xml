@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://fyvan.github.io/"/>
-  <updated>2020-05-28T16:35:51.553Z</updated>
+  <updated>2020-05-30T16:49:42.222Z</updated>
   <id>http://fyvan.github.io/</id>
   
   <author>
@@ -17,11 +17,95 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>ObjectMapper工具API</title>
+    <link href="http://fyvan.github.io/undefined/fcf2.html"/>
+    <id>http://fyvan.github.io/undefined/fcf2.html</id>
+    <published>2020-05-29T09:01:04.028Z</published>
+    <updated>2020-05-30T16:49:42.222Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;在了解ObjectMapper之前,我们先要了解下什么是JSON.&lt;/p&gt;
+&lt;p&gt;JSON(JavaScript Object Notation)
+        
+      
+    
+    </summary>
+    
+    
+      <category term="API" scheme="http://fyvan.github.io/categories/API/"/>
+    
+    
+      <category term="ObjectMapper" scheme="http://fyvan.github.io/tags/ObjectMapper/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CentOS 7安装Docker</title>
+    <link href="http://fyvan.github.io/undefined/674f.html"/>
+    <id>http://fyvan.github.io/undefined/674f.html</id>
+    <published>2020-05-28T13:13:32.898Z</published>
+    <updated>2020-05-29T01:39:20.711Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;1-前言&quot;&gt;&lt;a href=&quot;#1-前言&quot; class=&quot;headerlink&quot; title=&quot;1. 前言&quot;&gt;&lt;/a&gt;1. 前言&lt;/h3&gt;&lt;p&gt;Docker 使用越来越多，安装也很简单，本次记录一下基本的步骤。&lt;/p&gt;
+&lt;p&gt;Docker 目前支持 CentOS
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Software_Install" scheme="http://fyvan.github.io/categories/Software-Install/"/>
+    
+    
+      <category term="Docker" scheme="http://fyvan.github.io/tags/Docker/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Redis安装与用法</title>
+    <link href="http://fyvan.github.io/undefined/d618.html"/>
+    <id>http://fyvan.github.io/undefined/d618.html</id>
+    <published>2020-05-27T01:06:48.520Z</published>
+    <updated>2020-05-29T08:52:09.321Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;1-在Redis官网下载软件包&quot;&gt;&lt;a href=&quot;#1-在Redis官网下载软件包&quot; class=&quot;headerlink&quot; title=&quot;1. 在Redis官网下载软件包&quot;&gt;&lt;/a&gt;1. 在Redis官网下载软件包&lt;/h2&gt;&lt;p&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Software_Install" scheme="http://fyvan.github.io/categories/Software-Install/"/>
+    
+    
+      <category term="CentOS7, Redis" scheme="http://fyvan.github.io/tags/CentOS7-Redis/"/>
+    
+  </entry>
+  
+  <entry>
     <title>CentOS7安装Mysql</title>
     <link href="http://fyvan.github.io/undefined/981a.html"/>
     <id>http://fyvan.github.io/undefined/981a.html</id>
     <published>2020-05-26T08:09:00.910Z</published>
-    <updated>2020-05-28T16:35:51.553Z</updated>
+    <updated>2020-05-31T02:04:14.507Z</updated>
     
     <summary type="html">
     
