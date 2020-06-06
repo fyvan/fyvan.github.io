@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://fyvan.github.io/"/>
-  <updated>2020-05-30T16:49:42.222Z</updated>
+  <updated>2020-06-02T11:40:59.318Z</updated>
   <id>http://fyvan.github.io/</id>
   
   <author>
@@ -17,11 +17,40 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>template page</title>
+    <link href="http://fyvan.github.io/undefined/68dd.html"/>
+    <id>http://fyvan.github.io/undefined/68dd.html</id>
+    <published>2020-06-01T11:30:33.608Z</published>
+    <updated>2020-06-02T11:40:59.318Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;1-概念&quot;&gt;&lt;a href=&quot;#1-概念&quot; class=&quot;headerlink&quot; title=&quot;1. 概念&quot;&gt;&lt;/a&gt;1. 概念&lt;/h2&gt;&lt;p&gt;&lt;code&gt;synchronized&lt;/code&gt; 是 Java
+        
+      
+    
+    </summary>
+    
+    
+      <category term="cate1" scheme="http://fyvan.github.io/categories/cate1/"/>
+    
+      <category term="cate2" scheme="http://fyvan.github.io/categories/cate1/cate2/"/>
+    
+    
+      <category term="keyword1,keyword2" scheme="http://fyvan.github.io/tags/keyword1-keyword2/"/>
+    
+  </entry>
+  
+  <entry>
     <title>ObjectMapper工具API</title>
     <link href="http://fyvan.github.io/undefined/fcf2.html"/>
     <id>http://fyvan.github.io/undefined/fcf2.html</id>
     <published>2020-05-29T09:01:04.028Z</published>
-    <updated>2020-05-30T16:49:42.222Z</updated>
+    <updated>2020-06-01T09:21:23.260Z</updated>
     
     <summary type="html">
     
@@ -50,7 +79,7 @@
     <link href="http://fyvan.github.io/undefined/674f.html"/>
     <id>http://fyvan.github.io/undefined/674f.html</id>
     <published>2020-05-28T13:13:32.898Z</published>
-    <updated>2020-05-29T01:39:20.711Z</updated>
+    <updated>2020-06-03T15:57:24.880Z</updated>
     
     <summary type="html">
     
@@ -102,10 +131,10 @@
   
   <entry>
     <title>CentOS7安装Mysql</title>
-    <link href="http://fyvan.github.io/undefined/981a.html"/>
-    <id>http://fyvan.github.io/undefined/981a.html</id>
+    <link href="http://fyvan.github.io/undefined/4871.html"/>
+    <id>http://fyvan.github.io/undefined/4871.html</id>
     <published>2020-05-26T08:09:00.910Z</published>
-    <updated>2020-05-31T02:04:14.507Z</updated>
+    <updated>2020-06-06T11:32:59.988Z</updated>
     
     <summary type="html">
     

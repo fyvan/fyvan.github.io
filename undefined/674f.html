@@ -564,9 +564,9 @@ Server:
 <p>注意，docker 的本地文件，包括镜像(images), 容器(containers), 存储卷(volumes)等，都需要手工删除。默认目录存储在 <code>/var/lib/docker</code>。</p>
 <pre class=" language-shell"><code class="language-shell">sudo rm -rf /var/lib/docker</code></pre>
 <h3 id="9-Docker拉取镜像慢解决方法"><a href="#9-Docker拉取镜像慢解决方法" class="headerlink" title="9. Docker拉取镜像慢解决方法"></a>9. Docker拉取镜像慢解决方法</h3><p>镜像加速<br>鉴于国内网络问题，后续拉取 Docker 镜像十分缓慢，我们可以需要配置加速器来解决，我使用的是网易的镜像地址：<a href="http://hub-mirror.c.163.com。" target="_blank" rel="noopener">http://hub-mirror.c.163.com。</a></p>
-<p>新版的 Docker 使用 /etc/docker/daemon.json（Linux） 或者 %programdata%\docker\config\daemon.json（Windows） 来配置 Daemon。</p>
+<p>新版的 Docker 使用 /etc/docker/daemon.conf（Linux） 或者 %programdata%\docker\config\daemon.json（Windows） 来配置 Daemon。</p>
 <p>请在该配置文件中加入（没有该文件的话，请先建一个）：</p>
-<p>{<br>“registry-mirrors”: [“<a href="http://hub-mirror.c.163.com”]">http://hub-mirror.c.163.com”]</a><br>}</p>
+<p>{<br>    “registry-mirrors”: [“<a href="http://hub-mirror.c.163.com&quot;]">http://hub-mirror.c.163.com"]</a><br>}</p>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
