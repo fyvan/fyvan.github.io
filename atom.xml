@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://fyvan.github.io/"/>
-  <updated>2020-06-08T01:36:05.689Z</updated>
+  <updated>2020-06-09T00:42:17.643Z</updated>
   <id>http://fyvan.github.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Redis常见的性能问题</title>
+    <link href="http://fyvan.github.io/undefined/776d.html"/>
+    <id>http://fyvan.github.io/undefined/776d.html</id>
+    <published>2020-06-09T00:38:57.562Z</published>
+    <updated>2020-06-09T00:42:17.643Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;Redis-常见的性能问题都有哪些？如何解决？&quot;&gt;&lt;a href=&quot;#Redis-常见的性能问题都有哪些？如何解决？&quot; class=&quot;headerlink&quot; title=&quot;Redis 常见的性能问题都有哪些？如何解决？&quot;&gt;&lt;/a&gt;Redis
+        
+      
+    
+    </summary>
+    
+    
+      <category term="redis" scheme="http://fyvan.github.io/categories/redis/"/>
+    
+    
+      <category term="redis" scheme="http://fyvan.github.io/tags/redis/"/>
+    
+  </entry>
   
   <entry>
     <title>Zookeeper安装与单机集群</title>
@@ -40,6 +67,36 @@
     
     
       <category term="Zookeeper" scheme="http://fyvan.github.io/tags/Zookeeper/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>IDEA使用</title>
+    <link href="http://fyvan.github.io/undefined/91c5.html"/>
+    <id>http://fyvan.github.io/undefined/91c5.html</id>
+    <published>2020-06-03T02:43:43.803Z</published>
+    <updated>2020-06-06T11:33:39.110Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;springboot项目访问项目主页出现404&lt;/p&gt;
+&lt;h2 id=&quot;项目报错汇总&quot;&gt;&lt;a href=&quot;#项目报错汇总&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="cate1" scheme="http://fyvan.github.io/categories/cate1/"/>
+    
+      <category term="cate2" scheme="http://fyvan.github.io/categories/cate1/cate2/"/>
+    
+    
+      <category term="keyword1,keyword2" scheme="http://fyvan.github.io/tags/keyword1-keyword2/"/>
     
   </entry>
   
