@@ -101,35 +101,6 @@
   </entry>
   
   <entry>
-    <title>template page</title>
-    <link href="http://fyvan.github.io/undefined/68dd.html"/>
-    <id>http://fyvan.github.io/undefined/68dd.html</id>
-    <published>2020-06-01T11:30:33.608Z</published>
-    <updated>2020-06-06T11:33:39.114Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;1-概念&quot;&gt;&lt;a href=&quot;#1-概念&quot; class=&quot;headerlink&quot; title=&quot;1. 概念&quot;&gt;&lt;/a&gt;1. 概念&lt;/h2&gt;&lt;p&gt;&lt;code&gt;synchronized&lt;/code&gt; 是 Java
-        
-      
-    
-    </summary>
-    
-    
-      <category term="cate1" scheme="http://fyvan.github.io/categories/cate1/"/>
-    
-      <category term="cate2" scheme="http://fyvan.github.io/categories/cate1/cate2/"/>
-    
-    
-      <category term="keyword1,keyword2" scheme="http://fyvan.github.io/tags/keyword1-keyword2/"/>
-    
-  </entry>
-  
-  <entry>
     <title>ObjectMapper工具API</title>
     <link href="http://fyvan.github.io/undefined/fcf2.html"/>
     <id>http://fyvan.github.io/undefined/fcf2.html</id>
