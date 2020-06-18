@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://fyvan.github.io/"/>
-  <updated>2020-06-18T06:59:49.500Z</updated>
+  <updated>2020-06-18T08:21:32.491Z</updated>
   <id>http://fyvan.github.io/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>spring面试整理</title>
+    <title>Spring面试整理</title>
     <link href="http://fyvan.github.io/undefined/e999.html"/>
     <id>http://fyvan.github.io/undefined/e999.html</id>
     <published>2020-06-15T02:08:06.870Z</published>
-    <updated>2020-06-18T06:59:49.500Z</updated>
+    <updated>2020-06-18T08:21:32.491Z</updated>
     
     <summary type="html">
     
@@ -36,15 +36,19 @@
     </summary>
     
     
+      <category term="面试" scheme="http://fyvan.github.io/categories/%E9%9D%A2%E8%AF%95/"/>
+    
+    
+      <category term="Spring" scheme="http://fyvan.github.io/tags/Spring/"/>
     
   </entry>
   
   <entry>
-    <title>面试之性能优化</title>
+    <title>Tomcat面试整理</title>
     <link href="http://fyvan.github.io/undefined/1529.html"/>
     <id>http://fyvan.github.io/undefined/1529.html</id>
     <published>2020-06-13T00:46:31.457Z</published>
-    <updated>2020-06-13T00:47:27.746Z</updated>
+    <updated>2020-06-18T08:16:14.061Z</updated>
     
     <summary type="html">
     
@@ -59,19 +63,19 @@
     </summary>
     
     
-      <category term="性能优化" scheme="http://fyvan.github.io/categories/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/"/>
+      <category term="面试" scheme="http://fyvan.github.io/categories/%E9%9D%A2%E8%AF%95/"/>
     
     
-      <category term="面试" scheme="http://fyvan.github.io/tags/%E9%9D%A2%E8%AF%95/"/>
+      <category term="Tomcat" scheme="http://fyvan.github.io/tags/Tomcat/"/>
     
   </entry>
   
   <entry>
-    <title>面试之性能优化</title>
+    <title>JVM面试整理</title>
     <link href="http://fyvan.github.io/undefined/1529.html"/>
     <id>http://fyvan.github.io/undefined/1529.html</id>
     <published>2020-06-10T11:30:08.440Z</published>
-    <updated>2020-06-13T10:39:01.671Z</updated>
+    <updated>2020-06-18T08:21:46.590Z</updated>
     
     <summary type="html">
     
@@ -86,10 +90,10 @@
     </summary>
     
     
-      <category term="性能优化" scheme="http://fyvan.github.io/categories/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/"/>
+      <category term="面试" scheme="http://fyvan.github.io/categories/%E9%9D%A2%E8%AF%95/"/>
     
     
-      <category term="面试" scheme="http://fyvan.github.io/tags/%E9%9D%A2%E8%AF%95/"/>
+      <category term="JVM" scheme="http://fyvan.github.io/tags/JVM/"/>
     
   </entry>
   
@@ -98,7 +102,7 @@
     <link href="http://fyvan.github.io/undefined/af36.html"/>
     <id>http://fyvan.github.io/undefined/af36.html</id>
     <published>2020-06-09T11:07:05.370Z</published>
-    <updated>2020-06-11T09:37:59.679Z</updated>
+    <updated>2020-06-18T08:17:41.766Z</updated>
     
     <summary type="html">
     
@@ -116,7 +120,7 @@
       <category term="Project" scheme="http://fyvan.github.io/categories/Project/"/>
     
     
-      <category term="Project" scheme="http://fyvan.github.io/tags/Project/"/>
+      <category term="jt" scheme="http://fyvan.github.io/tags/jt/"/>
     
   </entry>
   
@@ -125,7 +129,7 @@
     <link href="http://fyvan.github.io/undefined/776d.html"/>
     <id>http://fyvan.github.io/undefined/776d.html</id>
     <published>2020-06-09T00:38:57.562Z</published>
-    <updated>2020-06-09T00:42:17.643Z</updated>
+    <updated>2020-06-18T08:18:32.971Z</updated>
     
     <summary type="html">
     
@@ -140,7 +144,7 @@
     </summary>
     
     
-      <category term="redis" scheme="http://fyvan.github.io/categories/redis/"/>
+      <category term="面试" scheme="http://fyvan.github.io/categories/%E9%9D%A2%E8%AF%95/"/>
     
     
       <category term="redis" scheme="http://fyvan.github.io/tags/redis/"/>
@@ -152,7 +156,7 @@
     <link href="http://fyvan.github.io/undefined/e6b7.html"/>
     <id>http://fyvan.github.io/undefined/e6b7.html</id>
     <published>2020-06-06T11:38:55.668Z</published>
-    <updated>2020-06-08T01:36:05.689Z</updated>
+    <updated>2020-06-18T08:14:08.565Z</updated>
     
     <summary type="html">
     
@@ -179,7 +183,7 @@
     <link href="http://fyvan.github.io/undefined/91c5.html"/>
     <id>http://fyvan.github.io/undefined/91c5.html</id>
     <published>2020-06-03T02:43:43.803Z</published>
-    <updated>2020-06-06T11:33:39.110Z</updated>
+    <updated>2020-06-18T08:13:59.539Z</updated>
     
     <summary type="html">
     
@@ -187,29 +191,26 @@
       
         
         
-          &lt;p&gt;springboot项目访问项目主页出现404&lt;/p&gt;
-&lt;h2 id=&quot;项目报错汇总&quot;&gt;&lt;a href=&quot;#项目报错汇总&quot; class=&quot;headerlink&quot;
+          &lt;h2 id=&quot;IDEA开发使用异常处理&quot;&gt;&lt;a href=&quot;#IDEA开发使用异常处理&quot; class=&quot;headerlink&quot; title=&quot;IDEA开发使用异常处理&quot;&gt;&lt;/a&gt;IDEA开发使用异常处理&lt;/h2&gt;&lt;h3
         
       
     
     </summary>
     
     
-      <category term="cate1" scheme="http://fyvan.github.io/categories/cate1/"/>
-    
-      <category term="cate2" scheme="http://fyvan.github.io/categories/cate1/cate2/"/>
+      <category term="software" scheme="http://fyvan.github.io/categories/software/"/>
     
     
-      <category term="keyword1,keyword2" scheme="http://fyvan.github.io/tags/keyword1-keyword2/"/>
+      <category term="IntelliJ IDEA" scheme="http://fyvan.github.io/tags/IntelliJ-IDEA/"/>
     
   </entry>
   
   <entry>
-    <title>synchronized</title>
+    <title>synchronized原理分析</title>
     <link href="http://fyvan.github.io/undefined/7ebc.html"/>
     <id>http://fyvan.github.io/undefined/7ebc.html</id>
     <published>2020-06-01T11:30:33.608Z</published>
-    <updated>2020-06-10T16:48:16.249Z</updated>
+    <updated>2020-06-18T08:17:10.495Z</updated>
     
     <summary type="html">
     
@@ -224,7 +225,7 @@
     </summary>
     
     
-      <category term="synchronized" scheme="http://fyvan.github.io/categories/synchronized/"/>
+      <category term="多线程" scheme="http://fyvan.github.io/categories/%E5%A4%9A%E7%BA%BF%E7%A8%8B/"/>
     
     
       <category term="synchronized" scheme="http://fyvan.github.io/tags/synchronized/"/>
@@ -236,7 +237,7 @@
     <link href="http://fyvan.github.io/undefined/fcf2.html"/>
     <id>http://fyvan.github.io/undefined/fcf2.html</id>
     <published>2020-05-29T09:01:04.028Z</published>
-    <updated>2020-06-01T09:21:23.260Z</updated>
+    <updated>2020-06-18T08:14:25.623Z</updated>
     
     <summary type="html">
     
@@ -265,7 +266,7 @@
     <link href="http://fyvan.github.io/undefined/674f.html"/>
     <id>http://fyvan.github.io/undefined/674f.html</id>
     <published>2020-05-28T13:13:32.898Z</published>
-    <updated>2020-06-03T15:57:24.880Z</updated>
+    <updated>2020-06-18T08:20:00.343Z</updated>
     
     <summary type="html">
     
@@ -281,7 +282,7 @@
     </summary>
     
     
-      <category term="Software_Install" scheme="http://fyvan.github.io/categories/Software-Install/"/>
+      <category term="Software" scheme="http://fyvan.github.io/categories/Software/"/>
     
     
       <category term="Docker" scheme="http://fyvan.github.io/tags/Docker/"/>
@@ -293,7 +294,7 @@
     <link href="http://fyvan.github.io/undefined/d618.html"/>
     <id>http://fyvan.github.io/undefined/d618.html</id>
     <published>2020-05-27T01:06:48.520Z</published>
-    <updated>2020-05-29T08:52:09.321Z</updated>
+    <updated>2020-06-18T08:19:42.281Z</updated>
     
     <summary type="html">
     
@@ -308,7 +309,7 @@
     </summary>
     
     
-      <category term="Software_Install" scheme="http://fyvan.github.io/categories/Software-Install/"/>
+      <category term="Software" scheme="http://fyvan.github.io/categories/Software/"/>
     
     
       <category term="CentOS7, Redis" scheme="http://fyvan.github.io/tags/CentOS7-Redis/"/>
@@ -320,7 +321,7 @@
     <link href="http://fyvan.github.io/undefined/4871.html"/>
     <id>http://fyvan.github.io/undefined/4871.html</id>
     <published>2020-05-26T08:09:00.910Z</published>
-    <updated>2020-06-06T11:33:39.110Z</updated>
+    <updated>2020-06-18T08:19:18.401Z</updated>
     
     <summary type="html">
     
@@ -335,7 +336,7 @@
     </summary>
     
     
-      <category term="Software_Install" scheme="http://fyvan.github.io/categories/Software-Install/"/>
+      <category term="Software" scheme="http://fyvan.github.io/categories/Software/"/>
     
     
       <category term="CentOS7, mariadb" scheme="http://fyvan.github.io/tags/CentOS7-mariadb/"/>
@@ -347,7 +348,7 @@
     <link href="http://fyvan.github.io/undefined/981a.html"/>
     <id>http://fyvan.github.io/undefined/981a.html</id>
     <published>2020-05-26T08:04:06.090Z</published>
-    <updated>2020-06-10T07:33:47.948Z</updated>
+    <updated>2020-06-18T08:19:31.666Z</updated>
     
     <summary type="html">
     
@@ -362,7 +363,7 @@
     </summary>
     
     
-      <category term="Software_Install" scheme="http://fyvan.github.io/categories/Software-Install/"/>
+      <category term="Software" scheme="http://fyvan.github.io/categories/Software/"/>
     
     
       <category term="CentOS7, Nginx" scheme="http://fyvan.github.io/tags/CentOS7-Nginx/"/>
@@ -374,7 +375,7 @@
     <link href="http://fyvan.github.io/undefined/f754.html"/>
     <id>http://fyvan.github.io/undefined/f754.html</id>
     <published>2020-05-26T07:25:41.609Z</published>
-    <updated>2020-05-26T10:05:41.232Z</updated>
+    <updated>2020-06-18T08:19:04.332Z</updated>
     
     <summary type="html">
     
@@ -389,7 +390,7 @@
     </summary>
     
     
-      <category term="Software_Install" scheme="http://fyvan.github.io/categories/Software-Install/"/>
+      <category term="Software" scheme="http://fyvan.github.io/categories/Software/"/>
     
     
       <category term="CentOS7, jdk1.8" scheme="http://fyvan.github.io/tags/CentOS7-jdk1-8/"/>
@@ -401,7 +402,7 @@
     <link href="http://fyvan.github.io/undefined/276e.html"/>
     <id>http://fyvan.github.io/undefined/276e.html</id>
     <published>2020-05-25T12:20:53.927Z</published>
-    <updated>2020-05-26T07:05:20.091Z</updated>
+    <updated>2020-06-18T08:18:08.871Z</updated>
     
     <summary type="html">
     
@@ -416,7 +417,7 @@
     </summary>
     
     
-      <category term="MYSQL" scheme="http://fyvan.github.io/categories/MYSQL/"/>
+      <category term="面试" scheme="http://fyvan.github.io/categories/%E9%9D%A2%E8%AF%95/"/>
     
     
       <category term="MySql" scheme="http://fyvan.github.io/tags/MySql/"/>
@@ -428,7 +429,7 @@
     <link href="http://fyvan.github.io/undefined/2bdb.html"/>
     <id>http://fyvan.github.io/undefined/2bdb.html</id>
     <published>2020-05-25T00:51:16.453Z</published>
-    <updated>2020-05-25T11:44:29.372Z</updated>
+    <updated>2020-06-18T08:23:05.325Z</updated>
     
     <summary type="html">
     
@@ -443,7 +444,7 @@
     </summary>
     
     
-      <category term="Spring" scheme="http://fyvan.github.io/categories/Spring/"/>
+      <category term="框架,spring" scheme="http://fyvan.github.io/categories/%E6%A1%86%E6%9E%B6-spring/"/>
     
     
       <category term="SpringMVC" scheme="http://fyvan.github.io/tags/SpringMVC/"/>
@@ -455,7 +456,7 @@
     <link href="http://fyvan.github.io/undefined/b285.html"/>
     <id>http://fyvan.github.io/undefined/b285.html</id>
     <published>2020-05-24T13:28:05.303Z</published>
-    <updated>2020-05-25T11:49:02.617Z</updated>
+    <updated>2020-06-18T08:18:52.586Z</updated>
     
     <summary type="html">
     
@@ -471,7 +472,7 @@
     </summary>
     
     
-      <category term="Software_Install" scheme="http://fyvan.github.io/categories/Software-Install/"/>
+      <category term="Software" scheme="http://fyvan.github.io/categories/Software/"/>
     
     
       <category term="Ubantu,MongoDB" scheme="http://fyvan.github.io/tags/Ubantu-MongoDB/"/>
