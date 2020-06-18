@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://fyvan.github.io/"/>
-  <updated>2020-06-18T08:21:32.491Z</updated>
+  <updated>2020-06-18T14:39:49.059Z</updated>
   <id>http://fyvan.github.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>JVM垃圾回收器</title>
+    <link href="http://fyvan.github.io/undefined/86cc.html"/>
+    <id>http://fyvan.github.io/undefined/86cc.html</id>
+    <published>2020-06-18T08:39:34.863Z</published>
+    <updated>2020-06-18T14:39:49.059Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;JVM垃圾收集器的前世今生&quot;&gt;&lt;a href=&quot;#JVM垃圾收集器的前世今生&quot; class=&quot;headerlink&quot; title=&quot;JVM垃圾收集器的前世今生&quot;&gt;&lt;/a&gt;JVM垃圾收集器的前世今生&lt;/h1&gt;&lt;h2 id=&quot;1-JVM垃圾收集器的发展历程&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+    
+      <category term="JVM" scheme="http://fyvan.github.io/categories/JVM/"/>
+    
+    
+      <category term="JVM" scheme="http://fyvan.github.io/tags/JVM/"/>
+    
+  </entry>
   
   <entry>
     <title>Spring面试整理</title>
@@ -75,7 +102,7 @@
     <link href="http://fyvan.github.io/undefined/1529.html"/>
     <id>http://fyvan.github.io/undefined/1529.html</id>
     <published>2020-06-10T11:30:08.440Z</published>
-    <updated>2020-06-18T08:21:46.590Z</updated>
+    <updated>2020-06-18T13:58:22.024Z</updated>
     
     <summary type="html">
     
