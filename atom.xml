@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://fyvan.github.io/"/>
-  <updated>2020-07-06T07:32:07.703Z</updated>
+  <updated>2020-07-06T09:53:11.655Z</updated>
   <id>http://fyvan.github.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>多线程与高并发1-Volatile</title>
+    <link href="http://fyvan.github.io/undefined/bc86.html"/>
+    <id>http://fyvan.github.io/undefined/bc86.html</id>
+    <published>2020-07-06T07:45:49.721Z</published>
+    <updated>2020-07-06T09:53:11.655Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;1-Volatile-保证线程可见性&quot;&gt;&lt;a href=&quot;#1-Volatile-保证线程可见性&quot; class=&quot;headerlink&quot; title=&quot;1. Volatile-保证线程可见性&quot;&gt;&lt;/a&gt;1.
+        
+      
+    
+    </summary>
+    
+    
+      <category term="多线程与高并发" scheme="http://fyvan.github.io/categories/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E4%B8%8E%E9%AB%98%E5%B9%B6%E5%8F%91/"/>
+    
+    
+      <category term="Volatile" scheme="http://fyvan.github.io/tags/Volatile/"/>
+    
+  </entry>
   
   <entry>
     <title>多线程与高并发1-多线程</title>
