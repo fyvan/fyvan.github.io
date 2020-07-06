@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://fyvan.github.io/"/>
-  <updated>2020-06-18T14:56:28.058Z</updated>
+  <updated>2020-07-06T07:27:33.433Z</updated>
   <id>http://fyvan.github.io/</id>
   
   <author>
@@ -17,11 +17,61 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>多线程与高并发1-多线程</title>
+    <link href="http://fyvan.github.io/undefined/9aed.html"/>
+    <id>http://fyvan.github.io/undefined/9aed.html</id>
+    <published>2020-07-06T05:53:54.572Z</published>
+    <updated>2020-07-06T07:27:33.433Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;1-什么是线程&quot;&gt;&lt;a href=&quot;#1-什么是线程&quot; class=&quot;headerlink&quot; title=&quot;1. 什么是线程&quot;&gt;&lt;/a&gt;1.
+        
+      
+    
+    </summary>
+    
+    
+      <category term="多线程与高并发" scheme="http://fyvan.github.io/categories/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E4%B8%8E%E9%AB%98%E5%B9%B6%E5%8F%91/"/>
+    
+    
+      <category term="Thread" scheme="http://fyvan.github.io/tags/Thread/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>hello hexo</title>
+    <link href="http://fyvan.github.io/undefined/b659.html"/>
+    <id>http://fyvan.github.io/undefined/b659.html</id>
+    <published>2020-06-19T13:08:56.581Z</published>
+    <updated>2020-06-20T03:55:28.003Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a
+        
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
     <title>JVM垃圾回收器</title>
     <link href="http://fyvan.github.io/undefined/86cc.html"/>
     <id>http://fyvan.github.io/undefined/86cc.html</id>
     <published>2020-06-18T08:39:34.863Z</published>
-    <updated>2020-06-18T14:56:28.058Z</updated>
+    <updated>2020-07-06T07:28:10.815Z</updated>
     
     <summary type="html">
     
@@ -40,114 +90,6 @@
     
     
       <category term="JVM" scheme="http://fyvan.github.io/tags/JVM/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Spring面试整理</title>
-    <link href="http://fyvan.github.io/undefined/e999.html"/>
-    <id>http://fyvan.github.io/undefined/e999.html</id>
-    <published>2020-06-15T02:08:06.870Z</published>
-    <updated>2020-06-18T08:21:32.491Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;spring面试整理&quot;&gt;&lt;a href=&quot;#spring面试整理&quot; class=&quot;headerlink&quot; title=&quot;spring面试整理&quot;&gt;&lt;/a&gt;spring面试整理&lt;/h1&gt;&lt;h2 id=&quot;1-Spring框架概述&quot;&gt;&lt;a
-        
-      
-    
-    </summary>
-    
-    
-      <category term="面试" scheme="http://fyvan.github.io/categories/%E9%9D%A2%E8%AF%95/"/>
-    
-    
-      <category term="Spring" scheme="http://fyvan.github.io/tags/Spring/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Tomcat面试整理</title>
-    <link href="http://fyvan.github.io/undefined/1529.html"/>
-    <id>http://fyvan.github.io/undefined/1529.html</id>
-    <published>2020-06-13T00:46:31.457Z</published>
-    <updated>2020-06-18T08:16:14.061Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;性能优化专题&quot;&gt;&lt;a href=&quot;#性能优化专题&quot; class=&quot;headerlink&quot; title=&quot;性能优化专题&quot;&gt;&lt;/a&gt;性能优化专题&lt;/h1&gt;&lt;h2 id=&quot;1-tomcat性能优化&quot;&gt;&lt;a href=&quot;#1-tomcat性能优化&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="面试" scheme="http://fyvan.github.io/categories/%E9%9D%A2%E8%AF%95/"/>
-    
-    
-      <category term="Tomcat" scheme="http://fyvan.github.io/tags/Tomcat/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>JVM面试整理</title>
-    <link href="http://fyvan.github.io/undefined/1529.html"/>
-    <id>http://fyvan.github.io/undefined/1529.html</id>
-    <published>2020-06-10T11:30:08.440Z</published>
-    <updated>2020-06-18T14:57:12.168Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;JVM性能优化&quot;&gt;&lt;a href=&quot;#JVM性能优化&quot; class=&quot;headerlink&quot; title=&quot;JVM性能优化&quot;&gt;&lt;/a&gt;JVM性能优化&lt;/h1&gt;&lt;h2 id=&quot;1-Java类加载过程&quot;&gt;&lt;a href=&quot;#1-Java类加载过程&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="面试" scheme="http://fyvan.github.io/categories/%E9%9D%A2%E8%AF%95/"/>
-    
-    
-      <category term="JVM" scheme="http://fyvan.github.io/tags/JVM/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>项目业务实现</title>
-    <link href="http://fyvan.github.io/undefined/af36.html"/>
-    <id>http://fyvan.github.io/undefined/af36.html</id>
-    <published>2020-06-09T11:07:05.370Z</published>
-    <updated>2020-06-18T08:17:41.766Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;1-项目结构&quot;&gt;&lt;a href=&quot;#1-项目结构&quot; class=&quot;headerlink&quot; title=&quot;1. 项目结构:&quot;&gt;&lt;/a&gt;1. 项目结构:&lt;/h1&gt;&lt;h2 id=&quot;1-1-项目模块&quot;&gt;&lt;a href=&quot;#1-1-项目模块&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="Project" scheme="http://fyvan.github.io/categories/Project/"/>
-    
-    
-      <category term="jt" scheme="http://fyvan.github.io/tags/jt/"/>
     
   </entry>
   
@@ -210,7 +152,7 @@
     <link href="http://fyvan.github.io/undefined/91c5.html"/>
     <id>http://fyvan.github.io/undefined/91c5.html</id>
     <published>2020-06-03T02:43:43.803Z</published>
-    <updated>2020-06-18T08:13:59.539Z</updated>
+    <updated>2020-06-24T02:46:52.656Z</updated>
     
     <summary type="html">
     
@@ -264,7 +206,7 @@
     <link href="http://fyvan.github.io/undefined/fcf2.html"/>
     <id>http://fyvan.github.io/undefined/fcf2.html</id>
     <published>2020-05-29T09:01:04.028Z</published>
-    <updated>2020-06-18T08:14:25.623Z</updated>
+    <updated>2020-06-24T03:55:50.774Z</updated>
     
     <summary type="html">
     

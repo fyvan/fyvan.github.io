@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="JVM面试整理, Yvan Blog">
+    <meta name="keywords" content="多线程与高并发1-多线程, Yvan Blog">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>JVM面试整理 | Yvan Blog</title>
+    <title>多线程与高并发1-多线程 | Yvan Blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -268,12 +268,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/JVM.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/1.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">JVM面试整理</h1>
+                    <h1 class="description center-align post-title">多线程与高并发1-多线程</h1>
                 </div>
             </div>
         </div>
@@ -390,8 +390,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/JVM/">
-                                <span class="chip bg-color">JVM</span>
+                            <a href="/tags/Thread/">
+                                <span class="chip bg-color">Thread</span>
                             </a>
                         
                     </div>
@@ -402,8 +402,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E9%9D%A2%E8%AF%95/" class="post-category">
-                                面试
+                            <a href="/categories/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E4%B8%8E%E9%AB%98%E5%B9%B6%E5%8F%91/" class="post-category">
+                                多线程与高并发
                             </a>
                         
                     </div>
@@ -415,7 +415,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-06-10
+                    2020-07-06
                 </div>
                 
 
@@ -431,185 +431,260 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="JVM性能优化"><a href="#JVM性能优化" class="headerlink" title="JVM性能优化"></a>JVM性能优化</h1><h2 id="1-Java类加载过程"><a href="#1-Java类加载过程" class="headerlink" title="1 Java类加载过程"></a>1 Java类加载过程</h2><p>Java类加载需要经历以下7个过程:</p>
-<ol>
-<li><p><code>加载</code></p>
-<p>加载是类加载的第一个过程,在这个阶段,将完成以下三件事情:</p>
-<ul>
-<li>通过一个类的全限定名获取该类的<code>二进制流</code></li>
-<li>将该二进制流中的<code>静态存储结构</code>转化为方法去运行时的数据结构</li>
-<li>在内存中生成该类的<code>Class</code>对象,作为该类的数据访问入口</li>
-</ul>
-</li>
-<li><p><code>验证</code></p>
-<p>验证的目的是为了确保Class文件的字节流中的信息不会危害到虚拟机, 在该阶段主要完成以下四种验证:</p>
-<ul>
-<li><code>文件格式验证</code>验证字节流是否符合Class文件规范,如主次版本号是否在当前虚拟机范围内,常量池中的常量是否有不被支持的类型.</li>
-<li><code>元数据验证</code>对字节码描述的信息进行语义分析,如这个类是否有父类,是否继承了不被继承的类等</li>
-<li><code>字节码验证</code>是整个验证过程中最复杂的一个阶段,通过验证数据流和控制流的分析,确定程序语义是否正确, 主要针对方法体的验证. 如: 方法中的类型转换是否正确,跳转指令是否正确等.</li>
-<li><code>符号引用验证</code> 这个动作在后面的解析过程中发生, 主要是为了确保解析动作能正确执行</li>
-</ul>
-</li>
-<li><p><code>准备</code></p>
-<p>准备阶段是为类的静态变量分配内存并将其初始化为默认值,这些内存都将在方法区中进行分配. 准备阶段不分配类中的实例变量的内存,实例变量将会在对象实例化时随着对象一起分配在Java堆中.</p>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">int</span> value<span class="token operator">=</span><span class="token number">123</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//在初始化阶段才会变为123</span></code></pre>
-</li>
-<li><p><code>解析</code></p>
-<p>该阶段主要完成符号引用到直接引用的转换动作. 解析动作并不一定在初始化动作完成之前, 也有可能在初始化之后.</p>
-</li>
-<li><p><code>初始化</code></p>
-<p>初始化时类加载的最后一步, 前面的类加载过程, 除了在加载阶段用户应用程序可以通过自定义类加载器参与之外, 其余动作完全由虚拟机主导和控制. 到了初始化阶段, 才真正开始执行类中的定义的java程序代码.</p>
-</li>
-<li><p><code>使用</code></p>
-</li>
-<li><p><code>卸载</code></p>
-</li>
-</ol>
-<h2 id="2-Java内存分配"><a href="#2-Java内存分配" class="headerlink" title="2 Java内存分配"></a>2 Java内存分配</h2><ul>
-<li><code>寄存器</code>: 我们无法控制</li>
-<li><code>静态域</code>: static定义的静态成员</li>
-<li><code>常量池</code>: 编译时被确定保存在<strong><code>.class</code></strong>文件中的<code>(final)</code>常量值和一些文本修饰的符号引用(类和接口的全限定名, 字段的名称和描述符, 方法的名称和描述符)</li>
-<li><code>非RAM存储</code>: 硬盘等永久存储空间</li>
-<li><code>堆内存</code>: new创建的对象和数组, 由Java虚拟机自动垃圾回收器管理,存取速度慢.</li>
-<li><code>栈内存</code>: 基本类型的变量和对象的引用变量(堆内存空间的访问地址), 速度快,可以共享, 但是大小与生命周期必须确定,缺乏灵活性.</li>
-</ul>
+                <h2 id="1-什么是线程"><a href="#1-什么是线程" class="headerlink" title="1. 什么是线程"></a>1. 什么是线程</h2><p><code>线程（thread）</code>是操作系统能够进行运算调度的最小单位。它被包含在进程之中，是进程中的实际运作单位。一个进程可以开启多个线程。</p>
+<p>多线程扩展了多进程的概念，使得同一个进程可以同时并发处理多个任务。</p>
+<p>简而言之，一个程序运行后至少一个进程，一个进程里包含多个线程。</p>
+<p>如果一个进程只有一个线程，这种程序被称为单线程。</p>
+<p>如果一个进程中有多条执行路径被称为多线程程序。</p>
 <blockquote>
-<p>Java堆的结构是什么样子的? 什么是堆中的永久代<strong><code>(Perm Genspace)</code></strong>?</p>
+<p>代码测试:</p>
+<p>WhatIsThread是运行的一个程序进程,那么这个进程中有两个线程分别是<code>T1</code>和<code>main</code>这两个线程在运行</p>
 </blockquote>
-<p>JVM的堆是运行时数据区, 所有类的实例和数组都是在堆上分配内存. 它在JVM启动的时候被创建. 对象所占的堆内存是由自动内存管理系统也就是垃圾收集器回收.</p>
-<p>堆内存是由存活和死亡的对象组成的.存活的对象是应用可以访问的,不会被垃圾回收.死亡的对象是应用不可访问尚且还没有被垃圾收集器回收掉的对象. 一直到垃圾收集器把这些对象回收掉之前,他们会一直占据堆内存空间.</p>
-<h2 id="3-描述以下JVM加载Class文件的原理机制"><a href="#3-描述以下JVM加载Class文件的原理机制" class="headerlink" title="3 描述以下JVM加载Class文件的原理机制?"></a>3 描述以下JVM加载Class文件的原理机制?</h2><p>Java语言是一种具有动态性的解释型语言,类(Class)只有被加载到JVM后才能运行. 当运行指定程序时, JVM会将编译生成的<code>.class</code>文件按照需求和一定的规则加载到内存中,并组织成为一个完整的Java应用程序.这个加载过程是由类加载器完成,具体来说,就是由ClassLoader和它的子类来实现的. 类加载器本身也是一个类, 其实质是把类文件从硬盘读取到内存中.</p>
-<p>类的加载方式分为<code>隐式加载</code>和<code>显示加载</code>. 隐式加载指的是程序在使用new 等方式创建对象时, 会隐式的调用类的加载器把对应的类加载到JVM中. 显示加载指的是通过直接调用<code>class.forName()</code>方法来把所需的类加载到JVM中.</p>
-<p>任何一个工程项目都是由许多类组成的,当程序启动时, 只把需要的类加载到JVM中, 其他类只有被使用到的时候才会被加载, 采用这种方法一方面可以加快加载速度, 另一方面可以节约程序运行时对内存的开销. 此外, 在Java语言中, 每个类或接口都对应一个<code>.class</code>文件,这些文件可以堪称是一个个可以被动态加载的单元, 因此当只有部分类被修改时, 只需要重新编译变化的类即可, 而不需要重新编译所有文件, 因此加快了编译速度.</p>
-<p>在Java语言中, 类的加载是动态的, 它并不会一次性将所有的类全部加载后再运行, 而是保证程序运行的基础类(例如基类)完成加载到JVM中, 至于其他类, 则再需要的时候才加载.</p>
-<p>类加载的主要步骤:</p>
-<ul>
-<li>装载: 根据查找路径找到响应的class文件, 然后导入</li>
-<li>链接: 链接又可分为3个小步:<ul>
-<li>检查: 检查待加载的class文件的正确性</li>
-<li>准备: 给类中的静态变量分配存储空间</li>
-<li>解析: 将符号引用转换为直接引用(可选)</li>
-</ul>
-</li>
-<li>初始化: 对静态变量和静态代码块执行初始化从左.</li>
-</ul>
-<h2 id="4-GC是什么-为什么要有GC"><a href="#4-GC是什么-为什么要有GC" class="headerlink" title="4 GC是什么? 为什么要有GC?"></a>4 GC是什么? 为什么要有GC?</h2><p>GC是垃圾收集的意思(GabageCollection), 内存处理是编程人员容易出现问题的地方, 忘记或者错误的内存回收会导致程序或系统的不稳定甚至崩溃, Java提供的GC功能可以自动检测对象是否超过作用域从而达到自动回收内存的目的,Java语言没有提供释放已分配内存的显示操作方法.</p>
-<h2 id="5-简述Java垃圾回收机制"><a href="#5-简述Java垃圾回收机制" class="headerlink" title="5 简述Java垃圾回收机制"></a>5 简述Java垃圾回收机制</h2><p>在Java中, 程序员是不需要显示的去释放一个对象的内存的, 而是由虚拟机自行执行. 在JVM中, 只有一个垃圾回收线程, 它是低优先级的, 在正常情况下是不会执行的, 只有在虚拟机空闲或者当前堆内存不足时,才会触发执行, 扫描哪些没有被任何引用的对象, 并将它们添加到要回收的集合中, 进行回收.</p>
-<h2 id="6-如何判断一个对象是否存活-或者GC对象的判定方法"><a href="#6-如何判断一个对象是否存活-或者GC对象的判定方法" class="headerlink" title="6 如何判断一个对象是否存活?(或者GC对象的判定方法)"></a>6 如何判断一个对象是否存活?(或者GC对象的判定方法)</h2><p>判断一个对象是否存活有两种方法:</p>
-<ol>
-<li><p><strong><code>引用计数法</code></strong></p>
-<p>所谓引用技术法就是给每一个对象设置一个引用技术器, 每当有一个地方引用这个对象时, 就将计数器+1,引用失效时, 计数器就-1. 当一个对下那个的引用计数器为零时,说明此对象没有被引用, 也就是”死对象”, 将会进行垃圾回收.</p>
-<blockquote>
-<p>引用计数法有一个缺陷就是无法解决循环引用问题, 也就是说当对象A引用对象B, 对象B又引用着对象A,那么此时A , B对象的引用计数器都不为零, 也就法务完成垃圾回收, 所以主流的虚拟机都没有采用这种算法.</p>
-</blockquote>
-</li>
-<li><p><strong><code>可达性算法(引用链法)</code></strong></p>
-<p>该算法的思想是: 从一个被称为GC Roots的对象开始向下搜索, 如果一个对象到GC Roots没有任何引用链相连时,则说明此对象不可用.</p>
-<p>在Java中可以作为GC Roots的对象有以下几种:</p>
-<ul>
-<li>虚拟机栈引用的对象</li>
-<li>方法区类静态属性引用的对象</li>
-<li>方法区常量池引用的对象</li>
-<li>本地方法栈JNI引用的对象</li>
-</ul>
-<p>虽然这些算法可以判定一个对象是否能被回收, 但是当满足上述条件时,一个对象并不一定会被回收. 当一个对象不可达 GC Roots时, 这个对象并不会被立即回收, 而是出于一个死缓的阶段, 若要被真正的回收需要经历两次标记.</p>
-<p>如果对象在可达性分析中没有与GC Roots的引用链, 那么此时就会被第一次标记并且进行一次筛选, 筛选的条件是: 是否有必要执行<code>finalize()</code>方法. 当对象没有覆盖<code>finalize()</code>方法或者已经被虚拟机调用过,那么就认为是没必要的; 如果该对象有必要执行<code>finalize()</code>方法, 那么这个对象将会放在一个成为F-Queue的队列中, 虚拟机会触发一个<code>Finalize()</code>线程去执行, 此线程是低优先级的, 并且虚拟机不会承诺一直等待它运行完, 这是因为如果finalize()执行缓慢或者发生了死锁, 那么就会造成F-Queue中的队形进行第二次被标记,这是该对象将被移出”即将回收”集合, 等待回收.</p>
-</li>
-</ol>
-<h2 id="7-垃圾回收的优点和原理-并考虑2种回收机制"><a href="#7-垃圾回收的优点和原理-并考虑2种回收机制" class="headerlink" title="7 垃圾回收的优点和原理. 并考虑2种回收机制"></a>7 垃圾回收的优点和原理. 并考虑2种回收机制</h2><p>Java语言中一个显著的特点就是引入了垃圾回收机制, 使C++程序员最头疼的内存管理问题迎刃而解, 它使得Java程序员在编写程序的时候不需要再考虑内存管理. 由于有个垃圾回收机制, Java肿的对象不再有”作用域”的概念, 只有对象的引用才有”作用域”. 垃圾回收器通常是作为一个单独的低级别的线程运行, 不可预知的情况下对内存堆肿已经死亡的或者长时间没有使用的对象进行清除可回收, 程序员崩实时的调用垃圾回收器对某个对象或所有对象进行垃圾回收.</p>
-<p>回收机制有<code>分代复制垃圾回收</code>和<code>标记垃圾回收</code>, <code>增量垃圾回收</code></p>
-<h2 id="8-垃圾回收器的基本原理是什么-垃圾回收器可以马上回收内存码-有什么办法主动通知虚拟机进行垃圾回收"><a href="#8-垃圾回收器的基本原理是什么-垃圾回收器可以马上回收内存码-有什么办法主动通知虚拟机进行垃圾回收" class="headerlink" title="8 垃圾回收器的基本原理是什么?垃圾回收器可以马上回收内存码?有什么办法主动通知虚拟机进行垃圾回收?"></a>8 垃圾回收器的基本原理是什么?垃圾回收器可以马上回收内存码?有什么办法主动通知虚拟机进行垃圾回收?</h2><p>对于GC来说, 当程序员创建对象时, GC 就开始监控这个对象的地址\大小以及使用哦个情况. 通常GC采用有向图的方式记录和管理堆(heap)中的所有对象. 通过这种方式确定哪些对象是”可达的”, 哪些对象是”不可达的”. 当GC确定一些对象为”不可达”时,GC就有责任回收这些内存空间.</p>
-<p>可以.</p>
-<p>通过手动执行<strong><code>System.gc()</code></strong>, 通知GC运行, 但是Java语言规范并不保证GC一定会执行.</p>
-<h2 id="9-Java中会存在内存泄漏吗-请简单描述"><a href="#9-Java中会存在内存泄漏吗-请简单描述" class="headerlink" title="9 Java中会存在内存泄漏吗,请简单描述"></a>9 Java中会存在内存泄漏吗,请简单描述</h2><p>所谓的<code>内存泄露</code>就是指一个不再被程序使用的对象或变量一直被占据再内存中.Java中的有垃圾回收机制,它可以保证一对象不再被引用的时候即对象编程孤儿的时候,对象将自动被垃圾回收器从内存中清除掉. 由于Java使用有向图的方式进行垃圾回收管理, 可以消除引用循环的问题,例如有两盒对象,相互引用,值要他们和根进行是不可达的,那么GC也是可以回收它们的,例如下面的代码可以看到这种情况的内存回收:</p>
-<pre class=" language-Java"><code class="language-Java">import java.io.IOException; public class GarbageTest {
-/**
-* @param args
-* @throws IOException
-*/
-public static void main(String[] args) throws IOException {
-    // TODO Auto-generated method stub
-    try { 
-        gcTest();
-    } catch (IOException e) {
-        // TODO Auto-generated catch block
-        e.printStackTrace();
+<pre class=" language-Java"><code class="language-Java">//什么是线程
+public class WhatIsThread {
+    private static class T1 extends Thread{
+        @Override
+        public void run(){
+            for (int i = 0; i<10; i++){
+                try{
+                    TimeUnit.MICROSECONDS.sleep(1);
+                }catch (InterruptedException e){
+                    e.printStackTrace();
+                }
+                System.out.println("T1");
+            }
+        }
     }
-    System.out.println("has exited gcTest!"); System.in.read();
-    System.in.read(); 
-    System.out.println("out begin gc!"); 
-    for(inti=0;i<100;i++){
-        System.gc();
-        System.in.read();
-        System.in.read(); }
-    }
-    private static void gcTest() throws IOException {
-        System.in.read();
-        System.in.read();
-        Person p1 = new Person(); 
-        System.in.read();
-        System.in.read();
-        Person p2 = new Person();
-        p1.setMate(p2);
-        p2.setMate(p1);
-        System.out.println("before exit gctest!"); 
-        System.in.read();
-        System.in.read();
-        System.gc(); 
-        System.out.println("exit gctest!");
-    }
-    private static class Person {
-        byte[] data = new byte[20000000];
-        Person mate = null;
-        public void setMate(Person other) {
-            mate = other;
+
+    public static void main(String[] args) {
+        new T1().start();
+        for (int i = 0; i<10; i++){
+            try{
+                TimeUnit.MICROSECONDS.sleep(1);
+            }catch (InterruptedException e){
+                e.printStackTrace();
+            }
+            System.out.println("main");
         }
     }
 }</code></pre>
-<p><code>Java中的内存泄露的情况:</code></p>
-<p>长声明周期的对象持有短生命周期对象的引用就很可能发生内存泄漏,尽管短生命周期对象已经不再需要,但是因为长生命周期对象持有它的引用而导致不能被回收,这就是Java中的内存泄漏发生场景,通俗地说,就是程序员可能创建了一个对象,以后一直不再使用这个对象,这个对象却一直被引用,即这个对象无用但是却无法被垃圾回收器回收的,这就是Java中可能出现内存泄漏的情况.</p>
-<p>例如: 缓存系统,我们加载了一个对象放在缓存中(例如放再一个全局map对象中),然后一直不再使用它,这个对象一直被缓存引用,但却不再被使用.</p>
-<p>检查Java中的内存泄漏,一定要让程序将各种分支情况都完整执行到程序结束,然后看某个对象是否被使用过,如果内有,则才能判定这个对象属于内存泄漏.</p>
-<p>如果一个外部类的实例对象的方法返回了一个内部类的实例对象,这个内部类对象被长期引用了,即使那个外部类实例对象不再被使用,但由于内部类持久外部类的实例对象,这个外部类对象将不会被垃圾回收,这也会造成内存泄漏.</p>
-<h2 id="10深拷贝和浅拷贝"><a href="#10深拷贝和浅拷贝" class="headerlink" title="10深拷贝和浅拷贝"></a>10深拷贝和浅拷贝</h2><p>简单来讲就是复制,克隆.</p>
-<pre class=" language-Java"><code class="language-Java">Person p = new Person("张三")</code></pre>
-<p>浅拷贝就是对对象中的数据成员进行简单复制,如果存在动态成员或者指针就会报错.</p>
-<p>深拷贝就是对对象中存在的动态成员或指针重新开辟内存空间</p>
-<h2 id="11-System-gc-和Runtime-gc-会做什么事情"><a href="#11-System-gc-和Runtime-gc-会做什么事情" class="headerlink" title="11 System.gc()和Runtime.gc()会做什么事情?"></a>11 System.gc()和Runtime.gc()会做什么事情?</h2><p>这两和方法用来提示JVM要进行垃圾回收.但是. 立即开始还是延迟进行垃圾回收是取决于JVM的.</p>
-<h2 id="12-finalize-方法什么时候被调用-析构-finalization-的目的是什么"><a href="#12-finalize-方法什么时候被调用-析构-finalization-的目的是什么" class="headerlink" title="12 finalize()方法什么时候被调用?析构(finalization)的目的是什么?"></a>12 finalize()方法什么时候被调用?析构(finalization)的目的是什么?</h2><p>垃圾回收器(garbage colector)决定回收某对象时,就会运行该对象finalize()方法,但是再Java中很不幸,入伏哦内存充足的化,那么垃圾税收可能永远不会进行,就是说finalize()可能永远不被执行,显然指望它做收尾工作时靠不住的.那么finalize()究竟时做什么的呢?<code>它最主要的作用是回收特殊渠道申请的内存.</code>Java程序有垃圾回收器,所以一般情况下内存问题不用我们操心.但有一种JNI(Java Native Interface)调用non-Java程序(C或C++),finalize的工作就是回收这部分的内存.</p>
-<h2 id="13-如果对象的引用被置为null-垃圾回收器是否会立即释放对象占用的内存"><a href="#13-如果对象的引用被置为null-垃圾回收器是否会立即释放对象占用的内存" class="headerlink" title="13 如果对象的引用被置为null,垃圾回收器是否会立即释放对象占用的内存?"></a>13 如果对象的引用被置为null,垃圾回收器是否会立即释放对象占用的内存?</h2><p>不会,在下一个垃圾回收周期中,这个对象将是可被回收的.</p>
-<h2 id="14-什么是分布式垃圾回收-DGC-它是如何工作的"><a href="#14-什么是分布式垃圾回收-DGC-它是如何工作的" class="headerlink" title="14 什么是分布式垃圾回收(DGC)?它是如何工作的?"></a>14 什么是分布式垃圾回收(DGC)?它是如何工作的?</h2><p>DGC叫做分布式垃圾回收.RMI使用DGC来做自动垃圾回收.因为RMI包含了跨虚拟机的远程对象引用,垃圾回收是很困难的.DGC使用引用计数算法来给远程对象提供自动内存管理.</p>
-<h2 id="15-串行-serial-收集器和吞吐量-throughput-收集器的区别是什么"><a href="#15-串行-serial-收集器和吞吐量-throughput-收集器的区别是什么" class="headerlink" title="15 串行(serial)收集器和吞吐量(throughput)收集器的区别是什么?"></a>15 串行(serial)收集器和吞吐量(throughput)收集器的区别是什么?</h2><p><code>吞吐量收集器</code>使用<code>并行版本</code>的<code>新生代垃圾收集器</code>,它用于中等规模和大规模数据的应用程序.</p>
-<p>而<code>串行收集器</code>对大多数的<code>小应用</code>(在现代处理器上需要大概100M左右的内存)就足够了.</p>
-<h2 id="16-在Java中-对象什么时候可以被垃圾回收"><a href="#16-在Java中-对象什么时候可以被垃圾回收" class="headerlink" title="16 在Java中,对象什么时候可以被垃圾回收?"></a>16 在Java中,对象什么时候可以被垃圾回收?</h2><p>当对象对当前使用这个对象的应用程序变得不可触及的时候,这个对象就可以被回收了.</p>
-<h2 id="17-简述Java内存配域回收策略以及Minor-GC-和Major-GC"><a href="#17-简述Java内存配域回收策略以及Minor-GC-和Major-GC" class="headerlink" title="17 简述Java内存配域回收策略以及Minor GC 和Major GC."></a>17 简述Java内存配域回收策略以及Minor GC 和Major GC.</h2><ul>
-<li>对象优先在堆的Eden区分配</li>
-<li>大对象直接进入老年代</li>
-<li>长期存活的对象将直接进入老年代</li>
-</ul>
-<p>当Eden区没有足够的空间进行分配时,虚拟机会执行一次Minor GC. Minor GC通常发生在新生代的Eden区,在这个区的对象生存期短,往往发生GC的频率较高,回收速度比较快;Full GC/Major GC发生在老年代,一般情况下,触发来年代GC的时候不会触发Minor GC,但是通过配置,可以在Full GC之前进行一次Minor GC,这样可以加快老年代的回收速度.</p>
-<h2 id="18-JVM中永久代中会发生垃圾回收么"><a href="#18-JVM中永久代中会发生垃圾回收么" class="headerlink" title="18 JVM中永久代中会发生垃圾回收么?"></a>18 JVM中永久代中会发生垃圾回收么?</h2><p>垃圾回收不会发生在永久代, 如果永久代满了或者超过了临界值,会触发完全垃圾回收(Full GC).</p>
+<h2 id="2-线程的创建与启动"><a href="#2-线程的创建与启动" class="headerlink" title="2. 线程的创建与启动"></a>2. 线程的创建与启动</h2><h3 id="2-1-通过继承Thread类创建线程"><a href="#2-1-通过继承Thread类创建线程" class="headerlink" title="2.1 通过继承Thread类创建线程"></a>2.1 通过继承Thread类创建线程</h3><p>继承Thread类创建线程的步骤为：</p>
+<p>（1）创建一个类继承Thread类，重写run()方法，将所要完成的任务代码写进run()方法中；</p>
+<p>（2）创建Thread类的子类的对象；</p>
+<p>（3）调用该对象的start()方法，该start()方法表示先开启线程，然后调用run()方法；</p>
+<pre class=" language-Java"><code class="language-Java">public class HowToCreateThread1 {
+    //1.继承Thread
+    static class MyThread extends Thread{
+        @Override
+        public void run(){
+            System.out.println("Hello MyThread!");
+        }
+    }
+    //启动线程   
+    public static void main(String[] args){
+        new MyThread().start();
+    }
+}</code></pre>
+<h3 id="2-2-通过实现Runnable接口创建线程"><a href="#2-2-通过实现Runnable接口创建线程" class="headerlink" title="2.2 通过实现Runnable接口创建线程"></a>2.2 通过实现Runnable接口创建线程</h3><p>实现Runnable接口创建线程的步骤为：</p>
+<p>（1）创建一个类并实现Runnable接口</p>
+<p>（2）重写run()方法，将所要完成的任务代码写进run()方法中</p>
+<p>（3）创建实现Runnable接口的类的对象，将该对象当做Thread类的构造方法中的参数传进去</p>
+<p>（4）使用Thread类的构造方法创建一个对象，并调用start()方法即可运行该线程</p>
 <blockquote>
-<p>Java8中已经移除了永久代,新加了一个叫元数据区的native内存区.</p>
+<p>还可以使用Lambda表达式使用匿名内部类进行启动</p>
 </blockquote>
-<h2 id="19-Java中垃圾收集的方法有哪些"><a href="#19-Java中垃圾收集的方法有哪些" class="headerlink" title="19 Java中垃圾收集的方法有哪些?"></a>19 Java中垃圾收集的方法有哪些?</h2><p><strong><code>标记-清除</code></strong>:这是垃圾收集算法中最基础的,根据名字就可以知道,它的思想就是标记哪些要被回收的对象,然后统一回收. 这种方法很简单, 但是会有<code>两个主要问题</code>:</p>
-<ol>
-<li>效率不高,标记和清除的效率都很低</li>
-<li>会产生大量不连续的内存碎片,导致以后程序在分配较大对象时,由于没有充足的连续内存而提前触发一次GC动作.</li>
-</ol>
-<p><strong><code>复制算法</code></strong>:为了解决效率问题, 复制算法将可用内存按容量划分为相等的两部分,然后每次只使用其中的一块,当一块内存用完时,就将还存活的对象复制到第二块内存上,然后一次性清除完第一块内存,再将第二块上的对象复制到第一块. 但是这种方式, 内存的代价太高, 每次基本上都要浪费一半的内存.</p>
-<p>于是将该算法进行了改进,内存区域不再是按照1:1去划分,而是将<code>内存划分为8:1:1</code>三部分,较大的内存交给<code>Eden区</code>,其余两块较小的内存区叫<code>Survivor区</code>.每次都会优先使用Eden区,若Eden区满,就将对象复制到第二块内存上,然后清除Eden区,如果此时存活的对象太多,以至于Survivor不够时,会将这些对象通过分配担保机制复制到老年代中.(java堆又分为新生代和老年代).</p>
-<p><strong><code>标记-整理</code></strong>: 该算法主要是为了解决<code>标记-清除</code>,产生大量内存碎片的问题,当对象存活率较高时,也解决了<code>复制算法</code>的效率问题. 它的不同之处就是在清除对象的时候先将可回收对象移动到一端,然后清除掉端边界以外的对象,这样就不会产生内存碎片了.</p>
-<p><strong><code>分代收集</code></strong>:现在的虚拟机垃圾收集大多采用这种方式,它根据对象的生命周期,将堆分为新生代和老年代.在新生代中,由于对象生存周期短,每次回收都会有大量对象死去,那么这时就采用复制算法. 老年代里的对象存活率较高,没有额外的空间进行分配担保.</p>
-<h2 id="20-什么是类加载器-类加载器有哪些"><a href="#20-什么是类加载器-类加载器有哪些" class="headerlink" title="20. 什么是类加载器,类加载器有哪些?"></a>20. 什么是类加载器,类加载器有哪些?</h2><p>实现<code>通过类的全限定名获取该类的二进制字节流</code>的代码块叫做类加载器.</p>
-<p>主要有以下四种类加载器:</p>
-<ol>
-<li><code>启动类加载器(BootstrapClassLoader)</code>用来加载Java核心类库,无法被Java程序直接引用.</li>
-<li><code>扩展类加载器(extensions class loader)</code>用来加载Java的扩展库. Java悉尼及的实现会提供一个扩展目录. 该类加载器在此目录里面查找并加载Java类.</li>
-<li><code>系统类加载器(system class loader)</code>它根据Java应用的类路径(CLASSPATH)来加载Java类. 一般来说,Java应用的类都是由它来完成加载的. 可以通过<code>ClassLoader.getSystemClassLoader()</code>来获取它.</li>
-<li>用户<code>自定义类加载器</code>,通过<code>继承java.lang.ClassLoader</code>类的方式实现.</li>
-</ol>
-<h2 id="21-类加载器双亲委派模型机制"><a href="#21-类加载器双亲委派模型机制" class="headerlink" title="21 类加载器双亲委派模型机制?"></a>21 类加载器双亲委派模型机制?</h2><p>当一个类收到了类加载请求时,不会自己先去加载这个类,而是将其委派给父类,由父类去加载,如果此时父类不能加载,反馈给子类,由子类去完成类的加载.</p>
+<pre class=" language-Java"><code class="language-Java">public class HowToCreateThread2 {
+    //2.实现Runnable接口
+    static class MyRun implements Runnable{
+        @Override
+        public void run() {
+            System.out.println("Hello MyRun!");
+        }
+    }
+    //启动线程
+    public static void main(String[] args){
+        //方式1
+        new Thread(new MyRun()).start();
+        //方式2-使用Lambda表达式
+        new Thread(()-> System.out.println(Thread.currentThread().getName() + "Hello Lambda")).start();
+}</code></pre>
+<h3 id="2-3-通过实现Collable接口创建线程"><a href="#2-3-通过实现Collable接口创建线程" class="headerlink" title="2.3 通过实现Collable接口创建线程"></a>2.3 通过实现Collable接口创建线程</h3><p>实现Callable接口创建线程的步骤为：</p>
+<p>（1）创建一个类并实现Callable接口</p>
+<p>（2）重写call()方法，将所要完成的任务的代码写进call()方法中，需要注意的是call()方法有返回值，并且可以抛出异常</p>
+<p>（3）如果想要获取运行该线程后的返回值，需要创建Future接口的实现类的对象，即FutureTask类的对象，调用该对象的get()方法可获取call()方法的返回值</p>
+<p>（4）使用Thread类的有参构造器创建对象，将FutureTask类的对象当做参数传进去，然后调用start()方法开启并运行该线程。</p>
+<pre class=" language-Java"><code class="language-Java">public class HowToCreateThread3 {
+    //3.实现Callable接口
+    static class MyCall implements Callable<String>{
+        @Override
+        public String call(){
+            System.out.println("Hello MyCall!");
+            return "success";
+        }
+    }
+    public static void main(String[] args) throws Exception {
+        //启动线程
+        //Thread t = new Thread(new FutureTask<>(new MyCall()));
+        FutureTask<String> task = new FutureTask<String>(new MyCall());
+        Thread t = new Thread(task);
+        t.setName("CallableThread->");
+        t.start();
+        //获取结果
+        String result = task.get();
+        System.out.println(result);
+    }
+}</code></pre>
+<h3 id="2-4-使用线程池创建线程"><a href="#2-4-使用线程池创建线程" class="headerlink" title="2.4 使用线程池创建线程"></a>2.4 使用线程池创建线程</h3><p>使用线程池创建线程的步骤：</p>
+<p>（1）使用Executors类中的newFixedThreadPool(int num)方法创建一个线程数量为num的线程池</p>
+<p>（2）调用线程池中的execute()方法执行由实现Runnable接口创建的线程；调用submit()方法执行由实现Callable接口创建的线程</p>
+<p>（3）调用线程池中的shutdown()方法关闭线程池</p>
+<pre class=" language-Java"><code class="language-Java">public class HowToCreateThread4 {
+    //实现Runnable接口
+    static class MyRun1 implements Runnable{
+        @Override
+        public void run() {
+            System.out.println(Thread.currentThread().getName() + "Hello MyRun1!");
+        }
+    }
+    static class MyRun2 implements Runnable{
+        @Override
+        public void run() {
+            System.out.println(Thread.currentThread().getName() + "Hello MyRun2!");
+        }
+    }
+    static class MyRun3 implements Runnable{
+        @Override
+        public void run() {
+            System.out.println(Thread.currentThread().getName() + "Hello MyRun3!");
+        }
+    }
+    //实现Callable接口
+    static class MyCall implements Callable<String>{
+        @Override
+        public String call() throws Exception {
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            System.out.println(Thread.currentThread().getName() + "Hello MyCall!");
+            return "success";
+        }
+    }
+    //启动线程
+    public static void main(String[] args) throws Exception {
+        //通过线程池工厂创建线程数量为2的线程池
+        ExecutorService service = Executors.newFixedThreadPool(2);
+        //执行线程,execute()适用于实现Runnable接口创建的线程
+        service.execute(new MyRun1());
+        service.execute(new MyRun2());
+        service.execute(new MyRun3());
+        //submit()适用于实现Callable接口创建的线程
+        Future<String> task = service.submit(new ThreadDemo5());
+        //获取call()方法的返回值
+        String result = task.get();
+        System.out.println(result);
+        //关闭线程池
+        service.shutdown();
+    }
+}</code></pre>
+<h2 id="3-线程中Sleep-Yield-Join-的区别"><a href="#3-线程中Sleep-Yield-Join-的区别" class="headerlink" title="3. 线程中Sleep(), Yield(), Join()的区别"></a>3. 线程中Sleep(), Yield(), Join()的区别</h2><h3 id="3-1-Sleep"><a href="#3-1-Sleep" class="headerlink" title="3.1 Sleep()"></a>3.1 Sleep()</h3><p>Sleep: 意思就是睡眠,当前线程暂停一段时间让给别的线程去运行.<br>Sleep是怎么复活的?<br>由你的睡眠时间而定, 等睡眠到规定的时间自动复活</p>
+<pre class=" language-Java"><code class="language-Java">public class Sleep {
+    public static void main(String[] args) {
+        testSleep();
+    }
+    private static void testSleep() {
+        new Thread(()->{
+            for (int i=0; i<10; i++){
+                System.out.println("A" + i);
+                try {
+                    Thread.sleep(500); //睡500ms
+                    //TimeUnit.MILLISECONDS.sleep(500);
+                }catch (InterruptedException e){
+                    e.printStackTrace();
+                }
+            }
+        }).start();
+    }
+}</code></pre>
+<h3 id="3-2-Yield"><a href="#3-2-Yield" class="headerlink" title="3.2 Yield()"></a>3.2 Yield()</h3><p>Yield: 就是当前线程正在执行的时候停止下来进入等待队列,回到等待队列里在系统的调度算法里还是依然有可能把刚进等待入队列的这个线程拿回来继续执行</p>
+<p>当然,更大的可能性是把原来等待的那些拿出来一个来执行,所以Yield的意思是我让出一下CPU,后面你们能不能抢到那我不管</p>
+<pre class=" language-Java"><code class="language-Java">public class Yield {
+    public static void main(String[] args) {
+        testYield();
+    }
+     private static void testYield() {
+        new Thread(()->{
+            for (int i=0; i<10; i++){
+                System.out.println("A" + i);
+                if (i%10 == 0) Thread.yield();
+            }
+        }).start();
+
+        new Thread(()->{
+            for (int i=0; i<10; i++){
+                System.out.println("-----------------------B" + i);
+                if (i%10 == 0) Thread.yield();
+            }
+        }).start();
+    }
+}</code></pre>
+<h3 id="3-3-Join"><a href="#3-3-Join" class="headerlink" title="3.3 Join()"></a>3.3 Join()</h3><p>Join: 意思就是在自己当前线程加入你调用Join的线程(),当前线程等待,等调用的线程运行完成后,当前线程再去执行.</p>
+<p>t1和t2两个线程,在t1的某个点上调用了t2.join,它会跑到t2去运行,t1等待t2运行完毕继续t1运行(自己join自己没有意义)</p>
+<pre class=" language-Java"><code class="language-Java">public class T03_Sleep_Yield_Join {
+    public static void main(String[] args) {
+        testJoin();
+    }
+    private static void testJoin() {
+        Thread t1 = new Thread(()->{
+                for (int i=0; i<100; i++){
+                    System.out.println("t1--" + i);
+                    try{
+                        Thread.sleep(500);
+                    }catch (InterruptedException e){
+                        e.printStackTrace();
+                    }
+                }
+
+        });
+        Thread t2 = new Thread(()->{
+
+            try{
+                t1.join();
+            }catch (InterruptedException e){
+                e.printStackTrace();
+            }
+
+            for (int i=0; i<100; i++){
+                System.out.println("t2--" + i);
+                try{
+                    Thread.sleep(500);
+                }catch (InterruptedException e){
+                    e.printStackTrace();
+                }
+            }
+        });
+        t1.start();
+        t2.start();
+    }
+}</code></pre>
+<h2 id="4-线程状态"><a href="#4-线程状态" class="headerlink" title="4. 线程状态"></a>4. 线程状态</h2><p>线程生命周期，总共有六种状态：</p>
+<p><img src="./images/loading.gif" data-original="../images/posts/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E4%B8%8E%E9%AB%98%E5%B9%B6%E5%8F%911-%E5%A4%9A%E7%BA%BF%E7%A8%8B/image-20200706151501631.png" alt=""></p>
+<p>1). 新建状态(new)：当线程对象对创建后，即进入了新建状态，如：Thread t = new MyThread()；</p>
+<p>2). 可运行状态(Runnable): 其中又包括<code>Ready就绪状态</code>和<code>Running运行状态</code></p>
+<ul>
+<li><p>Ready状态表示调用线程对象的<code>start()</code>方法(t.start();)，线程即进入就绪状态; 处于就绪状态的线程，只是说明此线程已经做好了准备，随时等待CPU调度执行，并不是说执行了t.start()此线程立即就会执行.</p>
+</li>
+<li><p>Running状态表示CPU调度处于就绪状态的线程，线程真正的开始执行任务.</p>
+<blockquote>
+<p>注：就绪状态是进入到运行状态的唯一入口，也就是说，线程要想进入运行状态执行，首先必须处于就绪状态中</p>
+</blockquote>
+</li>
+</ul>
+<p>3). 定时等待阻塞状态(TimedWaiting): 通过调用线程的sleep(time)、join(time)等方法或发出了I/O请求时，线程会进入到阻塞状态。当sleep()状态超时、join()等待线程终止或者超时、或者I/O处理完毕时，线程重新转入就绪状态。</p>
+<p>4). 等待阻塞状态(Waiting): 运行状态中的线程执行wait()、join()方法，使本线程进入到等待阻塞状态；</p>
+<p>5). 同步阻塞状态(Blocked): 线程在获取synchronized同步锁失败(因为锁被其它线程所占用)，它会进入同步阻塞状态；获得锁后进入等待队列等待CPU调用</p>
+<p>6). 死亡状态(Teminated): 线程执行结束或者因异常退出了run()方法，该线程结束生命周期。</p>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -653,7 +728,7 @@ public static void main(String[] args) throws IOException {
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://fyvan.github.io/undefined/1529.html">http://fyvan.github.io/undefined/1529.html</a>
+                    <a href="http://fyvan.github.io/undefined/9aed.html">http://fyvan.github.io/undefined/9aed.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -691,8 +766,8 @@ public static void main(String[] args) throws IOException {
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/JVM/">
-                                    <span class="chip bg-color">JVM</span>
+                                <a href="/tags/Thread/">
+                                    <span class="chip bg-color">Thread</span>
                                 </a>
                             
                         </div>
@@ -1123,46 +1198,48 @@ public static void main(String[] args) throws IOException {
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/undefined/1529.html">
+                <a href="/undefined/9aed.html">
                     <div class="card-image">
                         
                         
-                        <img src="./images/loading.gif" data-original="/medias/featureimages/17.jpg" class="responsive-img" alt="Tomcat面试整理">
+                        <img src="./images/loading.gif" data-original="/medias/featureimages/1.jpg" class="responsive-img" alt="多线程与高并发1-多线程">
                         
-                        <span class="card-title">Tomcat面试整理</span>
+                        <span class="card-title">多线程与高并发1-多线程</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Tomcat面试整理
+                            多线程基本概念和使用
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-06-13
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-07-06
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E9%9D%A2%E8%AF%95/" class="post-category">
-                                    面试
+                            <a href="/categories/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E4%B8%8E%E9%AB%98%E5%B9%B6%E5%8F%91/" class="post-category">
+                                    多线程与高并发
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Tomcat/">
-                        <span class="chip bg-color">Tomcat</span>
+                    <a href="/tags/Thread/">
+                        <span class="chip bg-color">Thread</span>
                     </a>
                     
                 </div>
@@ -1176,44 +1253,32 @@ public static void main(String[] args) throws IOException {
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/undefined/af36.html">
+                <a href="/undefined/b659.html">
                     <div class="card-image">
                         
                         
-                        <img src="./images/loading.gif" data-original="/medias/featureimages/2.jpg" class="responsive-img" alt="项目业务实现">
+                        <img src="./images/loading.gif" data-original="/medias/featureimages/6.jpg" class="responsive-img" alt="hello hexo">
                         
-                        <span class="card-title">项目业务实现</span>
+                        <span class="card-title">hello hexo</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            shopProject业务具体实现
+                            Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hex
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-06-09
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-06-19
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/Project/" class="post-category">
-                                    Project
-                                </a>
-                            
+                            <i class="fas fa-user fa-fw"></i>
+                            Yvan Yang
                             
                         </span>
                     </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/jt/">
-                        <span class="chip bg-color">jt</span>
-                    </a>
-                    
                 </div>
                 
             </div>
